@@ -1,22 +1,75 @@
 body {
-    font-family: sans-serif;
-    background-color: lightgrey;
-    margin-top: 75px;
+    /*font-family: Pacifico;
+   /* background-color: lightgrey;
+    margin-top: 0px;
+    font-size: 20px;
+    text-shadow: 4px 4px 4px #aaa;*/
 }
-
-.center {
-    text-align: center;
+h1,h2,h3,h4,h5{
+	font-family: "Pavanam";
 }
-
-.text-big {
-    font-size: 300%;
+/** Containers **/
+.container{
+	padding:40px 20px;
 }
-
-.bold {
-    font-weight: bold;
+.container-spacy{
+	padding: 60px 20px;
 }
+/** background**/
 
-.img-medium {
-    height: 200px;
+.background-orange{
+	background-color: #f8bc3b;
 }
+/** Header **/
+header#main {
+margin-bottom:20px;
+}
+header#main .brand img {
+	margin: 40px;
+	display: block;
+}
+/* navigation */
+nav#main ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+nav#main ul li{
+	display: inline-block;
+	margin: 30px;
+}
+nav#main li a{
+	font-size: 80%;
+	font-family: "Ubuntu";
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #393f4a;
+}
+/* features */
+.feature {
+ text-align: center;
 
+}
+.feature h2{
+	font-size: 3em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 800;
+	line-height: 70px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+.column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
+.h5{
+	font-size: 1.6em;
+	font-weight: 600;
+}.p{
+	font-size: 80%;
+	margin-bottom: 40px;
+}
+.features img{
+	margin-bottom: 20px;
+}
