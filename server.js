@@ -7,10 +7,10 @@ app.use(morgan('combined'));
 
 
 var articles = {
-    article-one : {
-    title : 'Sana Jahan|ArticleOne',
-    heading : 'Article One',
-    date : 'Sep 5 , 2016',
+    article_one: {
+    title: 'Sana Jahan|ArticleOne',
+    heading: 'Article One',
+    date: 'Sep 5 , 2016',
     content : `
     <p>
         This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .
@@ -19,7 +19,7 @@ var articles = {
                 This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .
             </p> `
 },
- article-two :{
+ article_two :{
      title : 'Sana Jahan|ArticleTwo',
     heading : 'Article One',
     date : 'Sep 10 , 2016',
@@ -27,7 +27,7 @@ var articles = {
     <p>
         This is second article !!!!!!
             </p> `},
- article-three : {title : 'Sana Jahan|ArticleThree',
+ article_three : {title : 'Sana Jahan|ArticleThree',
     heading : 'Article Three',
     date : 'Sep 15 , 2016',
     content : `
