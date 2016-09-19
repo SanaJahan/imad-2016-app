@@ -16,7 +16,12 @@ h1,h2,h3,h4,h5{
 	padding: 60px 20px;
 }
 /** background**/
-
+.h1{
+	font-size: 3em;
+	color: black;
+	font-weight:700;
+	font-family: "Ubuntu";
+}
 .background-orange{
 	background-color: #f8bc3b;
 }
@@ -42,7 +47,7 @@ nav#main ul li{
 nav#main li a{
 	font-size: 80%;
 	font-family: "Ubuntu";
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-weight: 600;
 	color: #393f4a;
 }
@@ -72,4 +77,13 @@ nav#main li a{
 }
 .features img{
 	margin-bottom: 20px;
+}
+.container-articles{
+	max-width: 800px;
+	margin: 0 auto;
+	color: #4a4a4a;
+	font-family: 'sans-serif';
+	padding-top: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
