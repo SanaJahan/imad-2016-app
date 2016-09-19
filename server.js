@@ -21,7 +21,7 @@ var articles = {
 },
  article_two :{
      title : 'Sana Jahan|ArticleTwo',
-    heading : 'Article One',
+    heading : 'Article Two',
     date : 'Sep 10 , 2016',
     content : `
     <p>
