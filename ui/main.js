@@ -1,16 +1,27 @@
 var button=document.getElementById('counter');
-var counter=0;
 button.onclick = function() {
-    //Make request to counter endpoint
+    //Create a request
+    
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if(request.readystate===XMLHttprequest.DONE){
+          if(request.status===200){
+              var counter=request.responseText;
+              var span = document.getElementById('count');
+             span.innerHTML= counter.toString();
+          }
+      }
+        
+    };
     
     
     // Capture the response and store in a variabvle
     
     
     
-    //Render the variable in correct span
+    //Make request
+    request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
+    request.send(null);
+  
     
-    counter=counter+1;
-    var span = document.getElementById('count');
-    span.innerHTML= counter.toString();
 };
