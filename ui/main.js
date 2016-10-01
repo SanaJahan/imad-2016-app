@@ -15,7 +15,7 @@ button.onclick = function() {
     };
     
     
-    // Capture the response and store in a variabvle
+    // Capture the response and store in a variable
     
     
     
