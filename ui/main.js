@@ -20,9 +20,9 @@ button.onclick = function() {
     
     
     //Make request
-   // request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
+    request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
    //for local machine 
-   request.open('GET',document.URL+'counter',true);
+   //request.open('GET',document.URL+'counter',true);
     request.send(null);
   
     
