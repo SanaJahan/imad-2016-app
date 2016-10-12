@@ -31,7 +31,10 @@ var articles = {
     heading : 'Article Three',
     date : 'Sep 15 , 2016',
     content : `
-    <head><style> #commentbox3{min-height = "40px"; }</style></head>
+    <head><style> #commentbox3{min-height = "40px";
+                                margin-right="50px";
+                                color="red";
+                            }</style></head>
     <p>
               Johnny Johnny yes papa, Eating sugar no papa !!!
             </p>
