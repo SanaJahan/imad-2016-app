@@ -35,7 +35,7 @@ var articles = {
               Johnny Johnny yes papa, Eating sugar no papa !!!
             </p>
             <p> Your feedback is precious </p>
-            <input type = "text" id = "commentbox3" align = "left" size = "28px" min-height = "28px" placeholder = "Add your comments here " />
+            <input type = "text" id = "commentbox3" align = "left" size = "30px" maxlength = "500" placeholder = "Add your comments here " />
              `}
   };
 
