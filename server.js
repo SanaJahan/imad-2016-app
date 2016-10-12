@@ -31,7 +31,7 @@ var articles = {
     heading : 'Article Three',
     date : 'Sep 15 , 2016',
     content : `
-    <head><style> input {min height = "40px"; }
+    <head><style> input {min height = "40px"; }</style></head>
     <p>
               Johnny Johnny yes papa, Eating sugar no papa !!!
             </p>
