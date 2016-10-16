@@ -82,8 +82,8 @@ commentbtn.onclick = function(){
     //Make request to capture the comment
     var commentInput = document.getElementById('comment');
     var comment = commentInput.value;
-     request.open('GET','http://sanajahan.imad.hasura-app.io/submit-comment?comment='+comment,true);
+     request1.open('GET','http://sanajahan.imad.hasura-app.io/submit-comment?comment='+comment,true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-    request.send(null);
+    request1.send(null);
 };
