@@ -91,7 +91,7 @@ app.get('/submit-name',function(req,res){
 });
 var comments = [];
 app.get('/submit-comment',function(req,res){
-   var name = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
+   var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
    
    comments.push(comment);
    
