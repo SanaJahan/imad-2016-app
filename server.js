@@ -89,7 +89,14 @@ app.get('/submit-name',function(req,res){
    
    res.send(JSON.stringify(names));
 });
-
+var comments = [];
+app.get('/submit-comment',function(req,res){
+   var name = req.query.comment;//query does  is -> url ://submit-name?name=xxxxx;
+   
+   comments.push(comment);
+   
+   res.send(JSON.stringify(comments));
+});
 app.get('/ui/main.js', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
