@@ -8,7 +8,7 @@
     Blavjhgc b rb hkbvgt ebhrijb dfkhihf ekb rwgn vd  vsna x nanjb    rfbgo4v n m cjbgh vnknv nk 
     Blavjhgc b rb hkbvgt ebhrijb dfkhihf ekb rwgn vd  vsna x nanjb    rfbgo4v n m cjbgh vnknv nk 
     </p>
-    <div class = "Comments"> <p> <input type = "text" name = "Comment_1" placeholder = "Add public comment" /> </p> </div>
+    <div class = "Comments"> <p> <textarea name = "Comment_1" rows = "10" tabindex = "4" placeholder = "Add public comment" ></textarea> </p> </div>
     <div class = "submit_comment"> <p> < button> Submit </button> </p> </div> 
    </body>
  </html>
