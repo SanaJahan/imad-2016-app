@@ -65,11 +65,14 @@ function createTemplate(data){
                    ${content}
                 </div>
                 <br><hr>
-                 <div class = "commentbox"> <p>
-                   <ul id="commentlist">
+                  <div class = "commentbox">
+                <ul id="commentlist">
+                    
                 </ul>
-                 <textarea id = "comment" rows = "10" tabindex = "4" placeholder = "Add public comment"></textarea> </p> </div>
-                     <div class = "submit_comment"> <p> <button id = "comment-button" >Submit</button></p> </p> </div> 
+               <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
+               <br>
+               <p align = "center"><button id = "comment-button" >Submit</button></p>
+            </div> 
             </body>
             
             
