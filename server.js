@@ -69,7 +69,7 @@ function createTemplate(data){
                    <ul id="commentlist">
                 </ul>
                  <textarea id = "comment" rows = "10" tabindex = "4" placeholder = "Add public comment"></textarea> </p> </div>
-                     <div class = "submit_comment"> <p> < button id = "comment-button"> Submit </button> </p> </div> 
+                     <div class = "submit_comment"> <p> <button id = "comment-button" >Submit</button></p> </p> </div> 
             </body>
             
             
