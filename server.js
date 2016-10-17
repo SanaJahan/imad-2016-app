@@ -37,7 +37,8 @@ var articles = {
             </p>
             <p> Your feedback is precious </p>
             <input type = "text" id = "commentbox3" align = "left" size = "30px" maxlength = "500" placeholder = "Add your comments here " />
-             `}
+             `
+ }
   };
 
 function createTemplate(data){
@@ -63,8 +64,9 @@ function createTemplate(data){
                 </div>
                 <div>
                    ${content}
-                    
                 </div>
+                 <div class = "Comments"> <p> <textarea name = "Comment_1" rows = "10" tabindex = "4" placeholder = "Add public comment"></textarea> </p> </div>
+                     <div class = "submit_comment"> <p> < button> Submit </button> </p> </div> 
             </body>
             
             
@@ -89,6 +91,7 @@ app.get('/submit-name',function(req,res){
    
    res.send(JSON.stringify(names));
 });
+//  HANDLING COMMENTS REQUEST RESPONSE
 var comments = [];
 app.get('/submit-comment',function(req,res){
    var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
@@ -106,6 +109,9 @@ app.get('/:articleName', function (req, res) {
   res.send(createTemplate(articles[articleName]));
 });
 
+app.get('/ui/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
+});
 
 
 app.get('/ui/style.css', function (req, res) {
