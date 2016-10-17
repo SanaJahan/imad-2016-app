@@ -36,7 +36,6 @@ var articles = {
               Johnny Johnny yes papa, Eating sugar no papa !!!
             </p>
             <p> Your feedback is precious </p>
-            <input type = "text" id = "commentbox3" align = "left" size = "30px" maxlength = "500" placeholder = "Add your comments here " />
              `
  }
   };
@@ -65,6 +64,7 @@ function createTemplate(data){
                 <div>
                    ${content}
                 </div>
+                <br><hr>
                  <div class = "commentbox"> <p>
                    <ul id="commentlist">
                 </ul>
