@@ -98,10 +98,18 @@ app.get('/submit-name',function(req,res){
 var comments = [];
 app.get('/submit-comment',function(req,res){
    var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
-   
-   comments.push(comment);
-   
+    if (comments == undefined)
+	comments = [];	
+	comments.push(comment);
    res.send(JSON.stringify(comments));
+});
+app.get('/fetchcomments', function(req, res) {
+  var comment = req.query.comment;
+	if (comments != undefined)
+	  res.send(JSON.stringify(comments));
+	else {
+	  res.send("null");
+	}
 });
 app.get('/ui/main.js', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'main.js'));
