@@ -48,6 +48,7 @@ function createTemplate(data){
 
         var htmlTemplate =  `<html>
             <head>
+            <link rel="shortcut icon" href="favicon.ico">
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link href="/ui/style.css" rel="stylesheet" />
