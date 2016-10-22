@@ -33,7 +33,7 @@ button.onclick = function() {
 // Submit name
 
 var submit = document.getElementById('submit_btn');
-if (button != undefined) {
+if (submit != undefined) {
 submit.onclick = function(){
     //make a request to server and send the names
      var request = new XMLHttpRequest();
@@ -64,7 +64,7 @@ submit.onclick = function(){
 }
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
-if (button != undefined) {
+if (commentbtn != undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
     var request1 = new XMLHttpRequest();
