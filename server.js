@@ -48,11 +48,12 @@ function createTemplate(data){
 
         var htmlTemplate =  `<html>
             <head>
-       
+                <script type = "text/javascript" src= "/ui/main.js">
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
+            </script>
             </head>
             <body>
                 <div class=container-articles>
