@@ -1,4 +1,5 @@
 var button=document.getElementById('counter');
+if (button != undefined) {
 button.onclick = function() {
     //Create a request
     
@@ -23,13 +24,16 @@ button.onclick = function() {
     request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
+   //request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
     request.send(null);
   
     
 };
+}
 // Submit name
 
 var submit = document.getElementById('submit_btn');
+if (button != undefined) {
 submit.onclick = function(){
     //make a request to server and send the names
      var request = new XMLHttpRequest();
@@ -57,8 +61,10 @@ submit.onclick = function(){
    //request.open('GET',document.URL+'counter',true);
     request.send(null);
 };
+}
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
+if (button != undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
     var request1 = new XMLHttpRequest();
@@ -87,3 +93,4 @@ commentbtn.onclick = function(){
    //request.open('GET',document.URL+'counter',true);
     request1.send(null);
 };
+}
