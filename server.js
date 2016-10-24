@@ -7,7 +7,7 @@ var config = {
     database: 'sanajahan',
     host: 'db.imad.hasura-app.io';
     port: '5432';
-    password: proceess.env.DB_PASSWORD
+    password: process.env.DB_PASSWORD
 };
 var app = express();
 app.use(morgan('combined'));
@@ -96,9 +96,9 @@ app.get('/', function (req, res) {
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
    //make a select request and return result set
-   pool.query('SELECT * FROM test',function(rr,result){
+   pool.query('SELECT * FROM test',function(err,result){
        if(err){
-           res.statys(500).send(err.toString());
+           res.status(500).send(err.toString());
        }
        else{
            res.send(JSON.stringify(result.rows));
