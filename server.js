@@ -1,7 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var Pool = require('pg').Pool;
+var config = {
+    user : 'sanajahan',
+    database: 'sanajahan',
+    host: 'db.imad.hasura-app.io';
+    port: '5432';
+    password: process.env.DB_PASSWORD
+};
 var app = express();
 app.use(morgan('combined'));
 
@@ -31,10 +38,13 @@ var articles = {
     heading : 'Article Three',
     date : 'Sep 15 , 2016',
     content : `
+  
     <p>
               Johnny Johnny yes papa, Eating sugar no papa !!!
             </p>
-             `}
+            <p> Your feedback is precious </p>
+             `
+ }
   };
 
 function createTemplate(data){
@@ -47,6 +57,7 @@ function createTemplate(data){
             <head>
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
+                  <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
             </head>
             <body>
@@ -60,8 +71,18 @@ function createTemplate(data){
                 </div>
                 <div>
                    ${content}
-                    
                 </div>
+                <br><hr>
+                  <div class = "commentbox">
+                <ul id="commentlist">
+                    
+                </ul>
+               <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
+               <br>
+               <p align = "center"><button id = "comment-button" >Submit</button></p>
+            </div> 
+               <script type="text/javascript" src="/ui/main.js">
+        </script>
             </body>
             
             
@@ -71,6 +92,21 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+// Testing connection to the database
+var pool = new Pool(config);
+app.get('/test-db',function(req,res){
+   //make a select request and return result set
+   pool.query('SELECT * FROM test',function(err,result){
+       if(err){
+           res.status(500).send(err.toString());
+       }
+       else{
+           res.send(JSON.stringify(result.rows));
+       }
+       });
+       
+
+});
 
 var counter=0;
 app.get('/counter',function(req,res) {
@@ -78,15 +114,34 @@ app.get('/counter',function(req,res) {
     res.send(counter.toString());
 });
 
-/*var names = [];
+var names = [];
 app.get('/submit-name',function(req,res){
-   var name = req.query.name;
+   var name = req.query.name;//query does  is -> url ://submit-name?name=xxxxx;
    
    names.push(name);
    
    res.send(JSON.stringify(names));
-});*/
-
+});
+//  HANDLING COMMENTS REQUEST RESPONSE
+var comments = [];
+app.get('/submit-comment',function(req,res){
+   var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
+    if (comments == undefined)
+  comments = [];  
+  comments.push(comment);
+   res.send(JSON.stringify(comments));
+});
+app.get('/fetchcomments', function(req, res) {
+  var comment = req.query.comment;
+  if (comments != undefined)
+    res.send(JSON.stringify(comments));
+  else {
+    res.send("null");
+  }
+});
+app.get('/ui/main.js', function (req, res) {
+res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
 
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
@@ -101,6 +156,9 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+app.get('/favicon.ico', function(req, res){
+    res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
 
