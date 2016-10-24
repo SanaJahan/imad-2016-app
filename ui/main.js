@@ -24,11 +24,11 @@ button.onclick = function() {
     request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-<<<<<<< HEAD
+
    request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
-=======
+
    //request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
->>>>>>> bc9cf89b124ff197267a173c52fd916d28d31fa7
+
     request.send(null);
   
     
@@ -62,11 +62,9 @@ submit.onclick = function(){
     var name = nameInput.value;
     request.open('GET','http://sanajahan.imad.hasura-app.io/submit-name?name='+name,true);
    //for local machine 
-<<<<<<< HEAD
-   request.open('GET', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name', true);
+
+   request.open('GET', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name, true);
    //for local machine 
-=======
->>>>>>> bc9cf89b124ff197267a173c52fd916d28d31fa7
    //request.open('GET',document.URL+'counter',true);
     request.send(null);
 };
@@ -99,11 +97,9 @@ commentbtn.onclick = function(){
     var comment = commentInput.value;
      request1.open('GET','http://sanajahan.imad.hasura-app.io/submit-comment?comment='+comment,true);
    //for local machine 
-<<<<<<< HEAD
-   request.open('GET', window.location.protocol+'//'+window.location.host+'/submit-comment?comment='+comment', true);
+
+   request1.open('GET', window.location.protocol+'//'+window.location.host+'/submit-comment?comment='+comment, true);
    //for local machine 
-=======
->>>>>>> bc9cf89b124ff197267a173c52fd916d28d31fa7
    //request.open('GET',document.URL+'counter',true);
     request1.send(null);
 };
