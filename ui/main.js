@@ -69,6 +69,38 @@ submit.onclick = function(){
     request.send(null);
 };
 }
+// login function
+var submit = document.getElementById('login_btn');
+if (submit != undefined) {
+submit.onclick = function(){
+    //make a request to server and send the names
+     var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if(request.readyState===XMLHttpRequest.DONE){
+          if(request.status===200){
+            alert('Logged in succesfully');
+    }
+    else if(request.status===403){
+        alert('Username/Password incorrect');
+    }
+     else if(request.status===500){
+        alert('Aomething went wrong with the server');
+    }
+      }
+          };
+     var username = document.getElementById('username').value;
+     var password = document.getElementById('password').value;
+     console.log(username);
+     console.log(password);
+     request.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
+     request.open('POST', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name, true);
+   //for local machine 
+   //request.open('GET',document.URL+'counter',true);
+    request.send(JSON.stringify({username:username,password:password}));
+};
+}
+
+
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
 if (commentbtn != undefined) {
