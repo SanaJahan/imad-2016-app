@@ -130,8 +130,8 @@ app.post('/login',function(req,res){
         }
       }
     }
-  })
-})
+  });
+});
 
 app.get('/articles/:articleName',function(req,res){
    //make a select request and return result set
