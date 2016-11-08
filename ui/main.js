@@ -93,7 +93,7 @@ submit.onclick = function(){
      console.log(username);
      console.log(password);
      request.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
-     request.open('POST', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name, true);
+     request.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
     request.send(JSON.stringify({username:username,password:password}));
