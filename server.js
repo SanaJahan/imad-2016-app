@@ -93,7 +93,7 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user',function(req,res){
   var username = req.body.username;
-  var uname = req.body.uname;
+  var uname = req.body.name;
   var email = req.body.email;
   var password = req.body.password;
   var salt = crypto.randomBytes(128).toString('hex');
@@ -107,6 +107,31 @@ app.post('/create-user',function(req,res){
      }
   });
 });
+app.post('/login',function(req,res){
+  var username = req.body.username;
+  var password = req.body.password;
+  pool.query('SELECT * FROM "user" WHERE username = $1',[username],function(err,result){
+    if(err){
+      res.status(500).send(err.toString());
+    }
+    else{
+      if(result.rows.length===0){
+        res.send(403).send('Username/Password invalid');
+      }
+      else{
+        var dbString = result.rows[0].password;
+        var salt = dbString.split('$')[2];
+        var hashedPassword = hash(password,salt);
+        if(hashedPassword===dbString){
+          res.send('Credentials correct !');
+        }
+        else{
+          res.send(403).send('Username/Password invalid');
+        }
+      }
+    }
+  })
+})
 
 app.get('/articles/:articleName',function(req,res){
    //make a select request and return result set
