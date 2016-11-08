@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
+var bodyParser = require('body-parser');
 var config = {
     user : 'sanajahan',
     database: 'sanajahan',
@@ -11,41 +13,9 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 
-/*var articles = {
-    /*article_one: {
-    title: 'Sana Jahan|ArticleOne',
-    heading: 'Article One',
-    date: 'Sep 5 , 2016',
-    content : `
-    <p>
-        This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .
-            </p>
-             <p>
-                This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .This is the content of my first article .
-            </p> `
-},*/
- article_two :{
-     title : 'Sana Jahan|ArticleTwo',
-    heading : 'Article Two',
-    date : 'Sep 10 , 2016',
-    content : `
-    <p>
-        This is second article !!!!!!
-            </p> `},
- article_three : {title : 'Sana Jahan|ArticleThree',
-    heading : 'Article Three',
-    date : 'Sep 15 , 2016',
-    content : `
-  
-    <p>
-              Johnny Johnny yes papa, Eating sugar no papa !!!
-            </p>
-            <p> Your feedback is precious </p>
-             `
- }
-  };*/
 
 function createTemplate(data){
     var title = data.title;
@@ -67,7 +37,7 @@ function createTemplate(data){
                 <hr />
                 <h1>${heading}</h1>
                 <div>
-                    ${date}
+                    ${date.toDateString()}
                 </div>
                 <div>
                    ${content}
@@ -94,7 +64,7 @@ app.get('/', function (req, res) {
 });
 // Testing connection to the database
 var pool = new Pool(config);
-app.get('/test',function(req,res){
+/*app.get('/test',function(req,res){
    //make a select request and return result set
    pool.query('SELECT * FROM test',function(err,result){
        if(err){
@@ -104,12 +74,43 @@ app.get('/test',function(req,res){
            res.send(JSON.stringify(result.rows));
        }
        });
-       
+       403 is the FORBIDDEN STATUS
 
+});*/
+//CREATING FUNCTION TO HASH THE PASSWORD
+function hash(input,salt){
+  var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+ return ["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
+ //return hashed.toString('hex');
+}
+app.get('/hash/:input', function(req, res) {
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
+   res.send(hashedString);
 });
+
+//INSERTING THE USERNAME PASSWORD N DETAILS FOR REGISTRATION
+
+
+app.post('/create-user',function(req,res){
+  var username = req.body.username;
+  var uname = req.body.uname;
+  var email = req.body.email;
+  var password = req.body.password;
+  var salt = crypto.randomBytes(128).toString('hex');
+  var dbString = hash(password,salt);
+  pool.query('INSERT INTO "user" (username,name,email,password) VALUES ($1,$2,$3,$4)',[username,uname,email,dbString],function(err,result){
+     if(err){
+           res.status(500).send(err.toString());
+       }
+       else{
+        res.send('User created succesfully '+ username);
+     }
+  });
+});
+
 app.get('/articles/:articleName',function(req,res){
    //make a select request and return result set
-   pool.query("SELECT * FROM article where title = $1",[req.params.articleName],function(err,result){
+   pool.query("SELECT * FROM article WHERE title = $1",[req.params.articleName],function(err,result){
        if(err){
            res.status(500).send(err.toString());
        }
@@ -161,11 +162,11 @@ app.get('/fetchcomments', function(req, res) {
 app.get('/ui/main.js', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-
-app.get('/:articleName', function (req, res) {
+//When not using database then creating end-point to handle articel request response
+/*app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
-});
+});*/
 
 
 
