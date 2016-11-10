@@ -74,16 +74,16 @@ var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
-     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if(request.readyState===XMLHttpRequest.DONE){
-          if(request.status===200){
+     var request2 = new XMLHttpRequest();
+    request2.onreadystatechange = function() {
+      if(request2.readyState===XMLHttpRequest.DONE){
+          if(request2.status===200){
             alert('Logged in succesfully');
     }
-    else if(request.status===403){
+    else if(request2.status===403){
         alert('Username/Password incorrect');
     }
-     else if(request.status===500){
+     else if(request2.status===500){
         alert('Something went wrong with the server');
     }
       }
