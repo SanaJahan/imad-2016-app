@@ -80,7 +80,7 @@ submitlogin.onclick = function(){
           if(request2.status===200){
             alert('Logged in succesfully');
     }
-    else if(request2.status===404){
+    else if(request2.status===403){
         alert('Username/Password incorrect');
     }
      else if(request2.status===500){
