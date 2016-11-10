@@ -88,15 +88,16 @@ submitlogin.onclick = function(){
     }
       }
           };
-     var username = document.getElementById('username').value;
+     var username = document.getElementById('username').value;//extrct from input
      var password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
      request2.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
-     //request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
+     request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-      request2.send(JSON.stringify({username: username, password: password}));  
+     request.setRequestHeader('Content-Type', 'application/json');
+     request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
 
