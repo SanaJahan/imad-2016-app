@@ -96,7 +96,7 @@ submitlogin.onclick = function(){
      request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-    request2.send(JSON.stringify({username:username,password:password}));
+      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
 
