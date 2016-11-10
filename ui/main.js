@@ -71,7 +71,7 @@ submit.onclick = function(){
 }
 // login function
 var submitlogin = document.getElementById('login_btn');
-if (submitlogin != undefined) {
+if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
      var request = new XMLHttpRequest();
@@ -87,7 +87,7 @@ submitlogin.onclick = function(){
         alert('Something went wrong with the server');
     }
       }
-          }
+          };
      var username = document.getElementById('username').value;
      var password = document.getElementById('password').value;
      console.log(username);
@@ -102,7 +102,7 @@ submitlogin.onclick = function(){
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
-if (commentbtn != undefined) {
+if (commentbtn !== undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
     var request1 = new XMLHttpRequest();
