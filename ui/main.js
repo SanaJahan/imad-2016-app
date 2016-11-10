@@ -70,7 +70,7 @@ submit.onclick = function(){
 };
 }
 // login function
-/*var submitlogin = document.getElementById('login_btn');
+var submitlogin = document.getElementById('login_btn');
 if (submitlogin != undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
@@ -99,7 +99,6 @@ submitlogin.onclick = function(){
     request.send(JSON.stringify({username:username,password:password}));
 };
 }
-*/
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
