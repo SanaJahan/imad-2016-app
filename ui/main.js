@@ -70,9 +70,9 @@ submit.onclick = function(){
 };
 }
 // login function
-var submit = document.getElementById('login_btn');
-if (submit != undefined) {
-submit.onclick = function(){
+/*var submitlogin = document.getElementById('login_btn');
+if (submitlogin != undefined) {
+submitlogin.onclick = function(){
     //make a request to server and send the names
      var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -84,7 +84,7 @@ submit.onclick = function(){
         alert('Username/Password incorrect');
     }
      else if(request.status===500){
-        alert('Aomething went wrong with the server');
+        alert('Something went wrong with the server');
     }
       }
           };
@@ -99,7 +99,7 @@ submit.onclick = function(){
     request.send(JSON.stringify({username:username,password:password}));
 };
 }
-
+*/
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
