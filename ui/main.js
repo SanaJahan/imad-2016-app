@@ -79,6 +79,7 @@ submitlogin.onclick = function(){
       if(request2.readyState===XMLHttpRequest.DONE){
           if(request2.status===200){
             alert('Logged in succesfully');
+             document.location.href = "/";
     }
     else if(request2.status===403){
         alert('Username/Password incorrect');
@@ -100,6 +101,32 @@ submitlogin.onclick = function(){
      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
+
+//Register new user
+
+var submituser = document.getElementById('register_btn');
+if (submituser !== undefined) {
+submituser.onclick = function(){
+    //make a request to server and send the names
+     var requestregister = new XMLHttpRequest();
+    requestregister.onreadystatechange = function() {
+      if(requestregister.readyState===XMLHttpRequest.DONE){
+          if(requestregister.status===200){
+            alert('Account created succesfully succesfully');
+             document.location.href = "/login";
+    }
+     else if(requestregister.status===500){
+        alert('Something went wrong with the server');
+    }
+      }
+          };
+   //for local machine 
+   //request.open('GET',document.URL+'counter',true);
+    /* request2.setRequestHeader('Content-Type', 'application/json');
+     request2.send(JSON.stringify({username: username, password: password}));  */
+};
+}
+
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
