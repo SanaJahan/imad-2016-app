@@ -104,28 +104,40 @@ submitlogin.onclick = function(){
 
 //Register new user
 
-var submituser = document.getElementById('register_btn');
-if (submituser !== undefined) {
-submituser.onclick = function(){
-    //make a request to server and send the names
-     var requestregister = new XMLHttpRequest();
-    requestregister.onreadystatechange = function() {
-      if(requestregister.readyState===XMLHttpRequest.DONE){
-          if(requestregister.status===200){
-            alert('Account created succesfully succesfully');
-             document.location.href = "/login";
-    }
-     else if(requestregister.status===500){
-        alert('Something went wrong with the server');
-    }
-      }
-          };
-   //for local machine 
-   //request.open('GET',document.URL+'counter',true);
-    /* request2.setRequestHeader('Content-Type', 'application/json');
-     request2.send(JSON.stringify({username: username, password: password}));  */
-};
-}
+var register = document.getElementById('register_btn');
+    register.onclick = function () {
+        // Create a request object
+        var request3 = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request3.onreadystatechange = function () {
+          if (request3.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request3.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
+        };
+        
+        // Make the request
+        var username = document.getElementById('newusername').value;
+        var uname =  document.getElementById('newuname').value;
+        var email =  document.getElementById('newemail').value;
+        var password = document.getElementById('newpassword').value;
+        //console.log(username);
+        //console.log(password);
+        request.open('POST', '/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
+        register.value = 'Registering...';
+    
+    };
+
+
 
 
 // Submit a comment
