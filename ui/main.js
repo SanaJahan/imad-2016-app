@@ -71,7 +71,11 @@ submit.onclick = function(){
 }
 // login function
 var submitlogin = document.getElementById('login_btn');
+<<<<<<< HEAD
 if (submitlogin != undefined) {
+=======
+if (submitlogin !== undefined) {
+>>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 submitlogin.onclick = function(){
     //make a request to server and send the names
      var request2 = new XMLHttpRequest();
@@ -79,6 +83,7 @@ submitlogin.onclick = function(){
       if(request2.readyState===XMLHttpRequest.DONE){
           if(request2.status===200){
             alert('Logged in succesfully');
+             document.location.href = "/";
     }
     else if(request2.status===403){
         alert('Username/Password incorrect');
@@ -88,7 +93,7 @@ submitlogin.onclick = function(){
     }
       }
           };
-     var username = document.getElementById('username').value;
+     var username = document.getElementById('username').value;//extrct from input
      var password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
@@ -96,15 +101,57 @@ submitlogin.onclick = function(){
      request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
+<<<<<<< HEAD
    request2.setRequestHeader('Content-Type','application/json')
     request2.send(JSON.stringify({username:username,password:password}));
+=======
+     request2.setRequestHeader('Content-Type', 'application/json');
+     request2.send(JSON.stringify({username: username, password: password}));  
+>>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 };
 }
+
+//Register new user
+
+var register = document.getElementById('register_btn');
+    register.onclick = function () {
+        // Create a request object
+        var request3 = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request3.onreadystatechange = function () {
+          if (request3.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request3.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
+        };
+        
+        // Make the request
+        var username = document.getElementById('newusername').value;
+        var uname =  document.getElementById('newuname').value;
+        var email =  document.getElementById('newemail').value;
+        var password = document.getElementById('newpassword').value;
+        //console.log(username);
+        //console.log(password);
+        request.open('POST', '/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
+        register.value = 'Registering...';
+    
+    };
+
+
 
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
-if (commentbtn != undefined) {
+if (commentbtn !== undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
     var request1 = new XMLHttpRequest();

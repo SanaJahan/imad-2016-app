@@ -63,6 +63,7 @@ function createTemplate(data){
         </html> ` ;
         return htmlTemplate;
 }
+        
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -120,7 +121,7 @@ app.post('/login',function(req,res){
     }
     else{
       if(result.rows.length===0){
-        res.status(403).send('Username/Password invalid');
+        res.status(403).send('No such user exists');
       }
       else{
         var dbString = result.rows[0].password;
@@ -150,7 +151,11 @@ app.get('/check-login',function(req,res){
 
 app.get('/logout',function(req,res){
     delete req.session.auth;
+<<<<<<< HEAD
     res.send('You are logged out successfully');
+=======
+    res.send('Yourare logged out successfully');
+>>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 });
 
 
@@ -192,14 +197,14 @@ app.get('/submit-name',function(req,res){
 var comments = [];
 app.get('/submit-comment',function(req,res){
    var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
-    if (comments == undefined)
+    if (comments === undefined)
   comments = [];  
   comments.push(comment);
    res.send(JSON.stringify(comments));
 });
 app.get('/fetchcomments', function(req, res) {
   var comment = req.query.comment;
-  if (comments != undefined)
+  if (comments !== undefined)
     res.send(JSON.stringify(comments));
   else {
     res.send("null");
@@ -214,6 +219,9 @@ res.sendFile(path.join(__dirname, 'ui', 'main.js'));
   res.send(createTemplate(articles[articleName]));
 });*/
 
+app.get('/ui/login.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
 
 
 app.get('/ui/style.css', function (req, res) {
