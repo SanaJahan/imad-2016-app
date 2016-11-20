@@ -70,21 +70,21 @@ submit.onclick = function(){
 };
 }
 // login function
-var submit = document.getElementById('login_btn');
-if (submit != undefined) {
-submit.onclick = function(){
+var submitlogin = document.getElementById('login_btn');
+if (submitlogin != undefined) {
+submitlogin.onclick = function(){
     //make a request to server and send the names
-     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if(request.readyState===XMLHttpRequest.DONE){
-          if(request.status===200){
+     var request2 = new XMLHttpRequest();
+    request2.onreadystatechange = function() {
+      if(request2.readyState===XMLHttpRequest.DONE){
+          if(request2.status===200){
             alert('Logged in succesfully');
     }
-    else if(request.status===403){
+    else if(request2.status===403){
         alert('Username/Password incorrect');
     }
-     else if(request.status===500){
-        alert('Aomething went wrong with the server');
+     else if(request2.status===500){
+        alert('Something went wrong with the server');
     }
       }
           };
@@ -92,11 +92,12 @@ submit.onclick = function(){
      var password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
-     request.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
-     request.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
+     request2.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
+     request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-    request.send(JSON.stringify({username:username,password:password}));
+   request2.setRequestHeader('Content-Type','application/json')
+    request2.send(JSON.stringify({username:username,password:password}));
 };
 }
 
