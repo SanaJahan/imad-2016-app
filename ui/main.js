@@ -77,7 +77,6 @@ function loadLoginForm () {
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
-        <input type="submit" id="register_btn" value="Register" />
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
 // login function
@@ -110,8 +109,19 @@ submitlogin.onclick = function(){
      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
+}
 //Register new user
-
+function loadRegisterForm () {
+    var registerHtml = `
+        <h3>Login to enter site</h3>
+        <input type="text" id="newusername" placeholder="Your good name" />
+        <input type="text" id="newuname" placeholder="username" />
+        <input type="password" id="newpassword" />
+        <input type="text" id="newemail" placeholder="Your email" />
+        <br/><br/>
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = registerHtml;
 var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
