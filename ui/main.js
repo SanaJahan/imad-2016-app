@@ -98,6 +98,7 @@ submitlogin.onclick = function(){
         alert('Something went wrong with the server');
     }
       }
+        loadLoginForm();
           };
      var username = document.getElementById('username').value;//extract from input
      var password = document.getElementById('password').value;
@@ -139,6 +140,7 @@ var register = document.getElementById('register_btn');
                   register.value = 'Register';
               }
           }
+            loadRegisterForm();
         };
         
         // Make the request
