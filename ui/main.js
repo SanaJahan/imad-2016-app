@@ -98,13 +98,10 @@ submitlogin.onclick = function(){
      request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-<<<<<<< HEAD
    request2.setRequestHeader('Content-Type','application/json')
     request2.send(JSON.stringify({username:username,password:password}));
-=======
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
->>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 };
 }
 
@@ -136,7 +133,7 @@ var register = document.getElementById('register_btn');
         var password = document.getElementById('newpassword').value;
         //console.log(username);
         //console.log(password);
-        request.open('POST', '/create-user', true);
+        request.open('POST', window.location.protocol+'//'+window.location.host+'/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
