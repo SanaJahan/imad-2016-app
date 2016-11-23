@@ -1,179 +1,199 @@
-function loadLoginForm () {
-         var loginHtml = ` <h3>Login/Register Here for Posting Comments on the Articles!</h3>
-        <div class="row control-group">
-            <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Your Username" required>
-            </div>
-        </div>
-        <div class="row control-group">
-            <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required>
-            </div>
-        </div>
-        <br/>
-        <input type="submit" class="btn btn-default" id="login_btn" value="Login" />
-        <input type="submit" class="btn btn-default" id="register_btn" value="Register" />
-        `;
-             
-        
-    document.getElementById('login_area').innerHTML = loginHtml;
+ar button=document.getElementById('counter');
+if (button != undefined) {
+button.onclick = function() {
+    //Create a request
     
-    // Submit username/password to login
-    var submit = document.getElementById('login_btn');
-    submit.onclick = function () {
-        // Create a request object
-        var request = new XMLHttpRequest();
-        
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  submit.value = 'Sucess!';
-              } else if (request.status === 403) {
-                  submit.value = 'Invalid credentials. Try again?';
-              } else if (request.status === 500) {
-                  alert('Something went wrong on the server');
-                  submit.value = 'Login';
-              } else {
-                  alert('Something went wrong on the server');
-                  submit.value = 'Login';
-              }
-              loadLogin();
-          }  
-          // Not done yet
-        };
-        
-        // Make the request
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        if (username === '' || password === '') {
-        alert("Username/Password field can't be left empty");
-        return;
-    }
-        request.open('POST', '/login', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = 'Logging in...';
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if(request.readyState===XMLHttpRequest.DONE){
+          if(request.status===200){
+              var counter=request.responseText;
+              var span = document.getElementById('count');
+             span.innerHTML= counter.toString();
+          }
+      }
         
     };
     
-    var register = document.getElementById('register_btn');
+    
+    // Capture the response and store in a variabvle
+    
+    
+    
+    //Make request
+    request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
+   //for local machine 
+   //request.open('GET',document.URL+'counter',true);
+
+   request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
+
+   //request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
+
+    request.send(null);
+  
+    
+};
+}
+// Submit name
+
+var submit = document.getElementById('submit_btn');
+if (submit != undefined) {
+submit.onclick = function(){
+    //make a request to server and send the names
+     var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if(request.readyState===XMLHttpRequest.DONE){
+          if(request.status===200){
+    
+    //Capture the names and render it 
+    var names = request.responseText;
+    names = JSON.parse(names);
+    list = '';
+    for(var i = 0; i<names.length;i++){
+        list += '<li>'+names[i]+'</li>';
+    }
+    var ul = document.getElementById('namelist');
+    ul.innerHTML = list;
+          }
+      }
+          };
+     //Make request
+     var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('GET','http://sanajahan.imad.hasura-app.io/submit-name?name='+name,true);
+   //for local machine 
+
+   request.open('GET', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name, true);
+   //for local machine 
+   //request.open('GET',document.URL+'counter',true);
+    request.send(null);
+};
+}
+//Ui for login form
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login to enter site</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+// login function
+var submitlogin = document.getElementById('login_btn');
+if (submitlogin !== undefined) {
+submitlogin.onclick = function(){
+    //make a request to server and send the names
+     var request2 = new XMLHttpRequest();
+    request2.onreadystatechange = function() {
+      if(request2.readyState===XMLHttpRequest.DONE){
+          if(request2.status===200){
+            alert('Logged in succesfully');
+             document.location.href = "/";
+    }
+    else if(request2.status===403){
+        alert('Username/Password incorrect');
+    }
+     else if(request2.status===500){
+        alert('Something went wrong with the server');
+    }
+          //loadLoginForm();
+      }
+        
+          };
+     var username = document.getElementById('username').value;//extract from input
+     var password = document.getElementById('password').value;
+     console.log(username);
+     console.log(password);
+     request2.open('POST','/login',true);
+     request2.open('POST','/login', true);
+     request2.setRequestHeader('Content-Type', 'application/json');
+     request2.send(JSON.stringify({username: username, password: password}));  
+};
+}
+}
+//Register new user
+function loadRegisterForm () {
+    var registerHtml = `
+        <h3>Login to enter site</h3>
+        <input type="text" id="newusername" placeholder="Your good name" />
+        <input type="text" id="newuname" placeholder="username" />
+        <input type="password" id="newpassword" />
+        <input type="text" id="newemail" placeholder="Your email" />
+        <br/><br/>
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('register_area').innerHTML = registerHtml;
+var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
-        var request = new XMLHttpRequest();
+        var request3 = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
+        request3.onreadystatechange = function () {
+          if (request3.readyState === XMLHttpRequest.DONE) {
               // Take some action
-              if (request.status === 200) {
+              if (request3.status === 200) {
                   alert('User created successfully');
                   register.value = 'Registered!';
               } else {
                   alert('Could not register the user');
                   register.value = 'Register';
               }
+               
           }
+           
         };
         
         // Make the request
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-     if (username === '' || password === '') {
-        alert("Username/Password field can't be left empty");
-        return;
-    }
-        request.open('POST', '/create-user', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+        var username = document.getElementById('newusername').value;
+        var uname =  document.getElementById('newuname').value;
+        var email =  document.getElementById('newemail').value;
+        var password = document.getElementById('newpassword').value;
+        //console.log(username);
+        //console.log(password);
+        request3.open('POST','/create-user', true);
+        request3.setRequestHeader('Content-Type', 'application/json');
+        request3.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
     
     };
+
 }
 
-function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = `
-        <h3> Hi <i>${username.toUpperCase()}</i></h3>
-        <a href="/logout">Logout</a>
-    `;
-}
 
-function loadLogin () {
-    // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-            } else {
-                loadLoginForm();
+// Submit a comment
+var commentbtn = document.getElementById('comment-button');
+if (commentbtn !== undefined) {
+commentbtn.onclick = function(){
+    //Make request to server to send the comments
+    var request1 = new XMLHttpRequest();
+    request1.onreadystatechange = function (){
+        if(request1.readyState===XMLHttpRequest.DONE){
+            if(request1.status===200){
+    //Store the comments and display on the page
+    var comments = request1.responseText;
+        comments = JSON.parse(comments);
+        list_comment = '';
+        for(var j = 0; j<comments.length;j++){
+            list_comment += '<li>'+comments[j]+'</li>';
+        }
+            var ul1 = document.getElementById('commentlist');
+            ul1.innerHTML = list_comment;
             }
         }
     };
     
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
-//site visit counter
-function getCounter(){
-var request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-    if(request.readyState === XMLHttpRequest.DONE) {
-        if (request.status === 200) {
-            var counter = request.responseText;
-            var span = document.getElementById('count');
-            span.innerHTML = counter.toString();
-        }
-    }
+   
+    //Make request to capture the comment
+    var commentInput = document.getElementById('comment');
+    var comment = commentInput.value;
+     request1.open('GET','http://sanajahan.imad.hasura-app.io/submit-comment?comment='+comment,true);
+   //for local machine 
+
+   request1.open('GET', window.location.protocol+'//'+window.location.host+'/submit-comment?comment='+comment, true);
+   //for local machine 
+   //request.open('GET',document.URL+'counter',true);
+    request1.send(null);
 };
- request.open('GET', '/counter', true);
-    request.send(null);
 }
-
-function loadArticles () {
-        // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('articles');
-            if (request.status === 200) {
-                var articleData = JSON.parse(this.responseText);
-                var content = '';
-                for (var i=0; i< articleData.length; i++) {
-                     content += `<div class="container">
-                                <div class="row">
-                               <div class="post-preview">
-                                <a href="/${articleData[i].title}">
-                                <h2 class="post-title">
-                                     ${articleData[i].heading}
-                                </h2>
-                                <h3 class="post-subtitle">
-                                     ${articleData[i].subtitle}
-                                 </h3>
-                                </a>
-                    <p class="post-meta">Posted by <a href="/about.html">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
-                </div>
-                </div>
-                </div>`;
-                }
-               articles.innerHTML = content;
-            } else {
-                articles.innerHTML('Oops! Could not load all articles!')
-            }
-        }
-    };
-    
-    request.open('GET', '/get-articles', true);
-    request.send(null);
-}
-
-getCounter();
-// The first thing to do is to check if the user is logged in!
-loadLogin();
-
-// Now this is something that we could have directly done on the server-side using templating too!
-loadArticles();
