@@ -151,11 +151,7 @@ app.get('/check-login',function(req,res){
 
 app.get('/logout',function(req,res){
     delete req.session.auth;
-<<<<<<< HEAD
     res.send('You are logged out successfully');
-=======
-    res.send('Yourare logged out successfully');
->>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 });
 
 
