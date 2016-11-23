@@ -97,8 +97,9 @@ submitlogin.onclick = function(){
      else if(request2.status===500){
         alert('Something went wrong with the server');
     }
+          loadLoginForm();
       }
-        loadLoginForm();
+        
           };
      var username = document.getElementById('username').value;//extract from input
      var password = document.getElementById('password').value;
@@ -139,8 +140,9 @@ var register = document.getElementById('register_btn');
                   alert('Could not register the user');
                   register.value = 'Register';
               }
+               loadRegisterForm();
           }
-            loadRegisterForm();
+           
         };
         
         // Make the request
