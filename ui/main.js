@@ -83,6 +83,7 @@ function loadLoginForm () {
 var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
+     loadLoginForm();
     //make a request to server and send the names
      var request2 = new XMLHttpRequest();
     request2.onreadystatechange = function() {
@@ -97,7 +98,7 @@ submitlogin.onclick = function(){
      else if(request2.status===500){
         alert('Something went wrong with the server');
     }
-          loadLoginForm();
+          //loadLoginForm();
       }
         
           };
@@ -127,6 +128,7 @@ function loadRegisterForm () {
 var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
+        loadRegisterForm();
         var request3 = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
@@ -140,7 +142,7 @@ var register = document.getElementById('register_btn');
                   alert('Could not register the user');
                   register.value = 'Register';
               }
-               loadRegisterForm();
+               
           }
            
         };
