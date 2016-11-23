@@ -106,7 +106,7 @@ submitlogin.onclick = function(){
      console.log(username);
      console.log(password);
      request2.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
-     request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
+     request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
