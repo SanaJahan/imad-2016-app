@@ -83,7 +83,6 @@ function loadLoginForm () {
 var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
-     loadLoginForm();
     //make a request to server and send the names
      var request2 = new XMLHttpRequest();
     request2.onreadystatechange = function() {
@@ -128,7 +127,6 @@ function loadRegisterForm () {
 var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
-        loadRegisterForm();
         var request3 = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
