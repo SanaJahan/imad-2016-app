@@ -110,7 +110,6 @@ submitlogin.onclick = function(){
      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
-}
 //Register new user
 
 var register = document.getElementById('register_btn');
@@ -146,7 +145,7 @@ var register = document.getElementById('register_btn');
     
     };
 
-
+}
 
 
 // Submit a comment
