@@ -121,7 +121,7 @@ function loadRegisterForm () {
         <br/><br/>
         <input type="submit" id="register_btn" value="Register" />
         `;
-    document.getElementById('login_area').innerHTML = registerHtml;
+    document.getElementById('register_area').innerHTML = registerHtml;
 var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
