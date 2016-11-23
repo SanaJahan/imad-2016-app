@@ -105,7 +105,7 @@ submitlogin.onclick = function(){
      var password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
-     request2.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
+     request2.open('POST','/login',true);
      request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
@@ -152,7 +152,7 @@ var register = document.getElementById('register_btn');
         var password = document.getElementById('newpassword').value;
         //console.log(username);
         //console.log(password);
-        request3.open('POST',window.location.protocol+'//'+window.location.host+'/create-user', true);
+        request3.open('POST','/create-user', true);
         request3.setRequestHeader('Content-Type', 'application/json');
         request3.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
