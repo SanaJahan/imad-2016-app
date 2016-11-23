@@ -1,4 +1,4 @@
-ar button=document.getElementById('counter');
+var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
     //Create a request
