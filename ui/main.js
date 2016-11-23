@@ -69,9 +69,19 @@ submit.onclick = function(){
     request.send(null);
 };
 }
+//Ui for login form
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login to enter site</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
 // login function
 var submitlogin = document.getElementById('login_btn');
-if (submitlogin != undefined) {
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
@@ -90,21 +100,17 @@ submitlogin.onclick = function(){
     }
       }
           };
-     var username = document.getElementById('username').value;//extrct from input
+     var username = document.getElementById('username').value;//extract from input
      var password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
      request2.open('POST','http://sanajahan.imad.hasura-app.io/login',true);
      request2.open('POST', window.location.protocol+'//'+window.location.host+'/login', true);
-   //for local machine 
-   //request.open('GET',document.URL+'counter',true);
-   request2.setRequestHeader('Content-Type','application/json')
-    request2.send(JSON.stringify({username:username,password:password}));
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
-
+}
 //Register new user
 
 var register = document.getElementById('register_btn');
@@ -133,9 +139,9 @@ var register = document.getElementById('register_btn');
         var password = document.getElementById('newpassword').value;
         //console.log(username);
         //console.log(password);
-        request.open('POST', window.location.protocol+'//'+window.location.host+'/create-user', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
+        request3.open('POST',window.location.protocol+'//'+window.location.host+'/create-user', true);
+        request3.setRequestHeader('Content-Type', 'application/json');
+        request3.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
     
     };
