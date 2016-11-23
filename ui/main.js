@@ -71,11 +71,8 @@ submit.onclick = function(){
 }
 // login function
 var submitlogin = document.getElementById('login_btn');
-<<<<<<< HEAD
 if (submitlogin != undefined) {
-=======
 if (submitlogin !== undefined) {
->>>>>>> 4602f9243b3c10c2dc465d6d653bcccbfc5803b0
 submitlogin.onclick = function(){
     //make a request to server and send the names
      var request2 = new XMLHttpRequest();
