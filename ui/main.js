@@ -104,7 +104,7 @@ submitlogin.onclick = function(){
 }*/
 //Register new user
 var register = document.getElementById('register_btn');
-   if (submitlogin !== undefined) {
+   if (register !== undefined) {
     register.onclick = function () {
         // Create a request object
         var request3 = new XMLHttpRequest();
