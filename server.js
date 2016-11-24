@@ -64,6 +64,51 @@ function createTemplate(data){
         return htmlTemplate;
 }
         
+function createFormTemplate(data){
+    var title = "register";
+    var heading = "Welcome user";
+    var date = data.dat;
+
+        var htmlFormTemplate =  `<html>
+            <head>
+                <title>${title}</title>
+                <meta name = "viewport" content = "width = device-width initial-scale=1" />
+                  <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div class=container-articles>
+                    <a href="/">Home</a>
+                </div>
+                <hr />
+                <h1>${heading}</h1>
+                <div>
+                    ${date.toDateString()}
+                </div>
+                <div>
+                     <input type="text" id ="username" placeholder="Enter user name"/>
+                                         <input type="password" id ="password"/>
+                                         <input type="submit" id ="login_btn" />                              
+            <br>
+                </div>
+                <br><hr>
+                  <div class = "commentbox">
+                <ul id="commentlist">
+                    
+                </ul>
+               <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
+               <br>
+               <p align = "center"><button id = "comment-button" >Submit</button></p>
+            </div> 
+               <script type="text/javascript" src="/ui/main.js">
+        </script>
+            </body>
+            
+            
+        </html> ` ;
+        return htmlFormTemplate;
+}
+        
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -139,7 +184,9 @@ app.post('/login',function(req,res){
     }
   });
 });
-
+app.get('/loginUser',function(req,res){
+    res.send(createFormTemplate);
+       }
 app.get('/check-login',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId){
        res.send('You are logged in :'+req.session.auth.userId.toString());
@@ -215,9 +262,9 @@ res.sendFile(path.join(__dirname, 'ui', 'main.js'));
   res.send(createTemplate(articles[articleName]));
 });*/
 
-app.get('/ui/login.html', function (req, res) {
+/*app.get('/ui/login.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
-});
+});*/
 
 
 app.get('/ui/style.css', function (req, res) {
