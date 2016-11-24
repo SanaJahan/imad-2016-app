@@ -71,7 +71,7 @@ submit.onclick = function(){
 };
 }
 //Ui for login form
-function loadLoginForm () {
+/*function loadLoginForm () {
     var loginHtml = `
         <h3>Login to enter site</h3>
         <input type="text" id="username" placeholder="username" />
@@ -79,7 +79,7 @@ function loadLoginForm () {
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         `;
-    document.getElementById('login_area').innerHTML = loginHtml;
+    document.getElementById('login_area').innerHTML = loginHtml;*/
 // login function
 var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
@@ -111,7 +111,6 @@ submitlogin.onclick = function(){
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
-}
 }
 //Register new user
 function loadRegisterForm () {
