@@ -113,7 +113,7 @@ var register = document.getElementById('register_btn');
           if (request3.readyState === XMLHttpRequest.DONE) {
               if (request3.status === 200) {
                   alert('User created successfully');
-                  document.location.href = "/";
+                  document.location.href = "/loginUser";
               } else if(request3===403){
                   alert('Could not register the user');
                   register.value = 'Register';
