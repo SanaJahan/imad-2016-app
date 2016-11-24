@@ -64,10 +64,10 @@ function createTemplate(data){
         return htmlTemplate;
 }
         
-function createFormTemplate(data){
+function createFormTemplate(){
     var title = "register";
     var heading = "Welcome user";
-    var date = data.dat;
+    var date = data.date;
 
         var htmlFormTemplate =  `<html>
             <head>
