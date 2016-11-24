@@ -107,10 +107,10 @@ function createNewFormTemplate(){
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" />
-                    <input type="text" id="newuname" placeholder="username" />
-                    <input type="password" id="newpassword" />
-                    <input type="text" id="newemail" placeholder="Your email" /></p>
+                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" /><br />
+                    <input type="text" id="newuname" placeholder="username" /></br>
+                    <input type="text" id="newemail" placeholder="Your email" /><br />
+                    <input type="password" id="newpassword" /></p>
         <br/><br/>
         <p align = "center"><input type="submit" id="register_btn" value="Register" /> </p>                             
             <br>
