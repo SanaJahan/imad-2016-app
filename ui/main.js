@@ -71,7 +71,7 @@ submit.onclick = function(){
 };
 }
 //Ui for login form
-var submitlogin = document.getElementById('login_btn');
+/*var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
@@ -101,7 +101,7 @@ submitlogin.onclick = function(){
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
-}
+}*/
 //Register new user
 var register = document.getElementById('register_btn');
    if (submitlogin !== undefined) {
