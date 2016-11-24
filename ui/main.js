@@ -1,3 +1,9 @@
+function loadCounter () {
+    var counterHtml = `
+        <h3>Login to enter site</h3>
+        <p>THis is a counter </p>
+        `;
+    document.getElementById('counter_area').innerHTML = counterHtml;
 var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
@@ -33,6 +39,7 @@ button.onclick = function() {
   
     
 };
+}
 }
 // Submit name
 
