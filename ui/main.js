@@ -113,17 +113,6 @@ submitlogin.onclick = function(){
 };
 }
 //Register new user
-function loadRegisterForm () {
-    var registerHtml = `
-        <h3>Login to enter site</h3>
-        <input type="text" id="newusername" placeholder="Your good name" />
-        <input type="text" id="newuname" placeholder="username" />
-        <input type="password" id="newpassword" />
-        <input type="text" id="newemail" placeholder="Your email" />
-        <br/><br/>
-        <input type="submit" id="register_btn" value="Register" />
-        `;
-    document.getElementById('register_area').innerHTML = registerHtml;
 var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
@@ -159,7 +148,6 @@ var register = document.getElementById('register_btn');
     
     };
 
-}
 
 
 // Submit a comment
