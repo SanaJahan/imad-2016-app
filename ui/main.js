@@ -71,16 +71,6 @@ submit.onclick = function(){
 };
 }
 //Ui for login form
-/*function loadLoginForm () {
-    var loginHtml = `
-        <h3>Login to enter site</h3>
-        <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password" />
-        <br/><br/>
-        <input type="submit" id="login_btn" value="Login" />
-        `;
-    document.getElementById('login_area').innerHTML = loginHtml;*/
-// login function
 var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
@@ -107,26 +97,24 @@ submitlogin.onclick = function(){
      console.log(username);
      console.log(password);
      request2.open('POST','/login',true);
-     request2.open('POST','/login', true);
+     //request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
 }
 //Register new user
 var register = document.getElementById('register_btn');
+   if (submitlogin !== undefined) {
     register.onclick = function () {
         // Create a request object
         var request3 = new XMLHttpRequest();
-        
         // Capture the response and store it in a variable
         request3.onreadystatechange = function () {
           if (request3.readyState === XMLHttpRequest.DONE) {
-              // Take some action
               if (request3.status === 200) {
                   alert('User created successfully');
-                  register.value = 'Registered!';
                   document.location.href = "/";
-              } else {
+              } else if(request3===403){
                   alert('Could not register the user');
                   register.value = 'Register';
               }
@@ -134,21 +122,17 @@ var register = document.getElementById('register_btn');
           }
            
         };
-        
         // Make the request
         var username = document.getElementById('newusername').value;
         var uname =  document.getElementById('newuname').value;
         var email =  document.getElementById('newemail').value;
         var password = document.getElementById('newpassword').value;
-        //console.log(username);
-        //console.log(password);
         request3.open('POST','/create-user', true);
         request3.setRequestHeader('Content-Type', 'application/json');
         request3.send(JSON.stringify({username: newusername, uname: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
-    
     };
-
+   }
 
 
 // Submit a comment
