@@ -83,6 +83,7 @@ function createFormTemplate(){
                                          <input type="password" id ="password"/>
                                          <input type="submit" id ="login_btn" />                              
             <br>
+                    <center><a href = "/newUser">New User? Sign Up </a> </center>
                 </div>
                 <br><hr>
                <script type="text/javascript" src="/ui/main.js">
@@ -90,6 +91,37 @@ function createFormTemplate(){
             </body>
         </html> ` ;
         return htmlFormTemplate;
+}
+function createNewFormTemplate(){
+        var htmlNewFormTemplate =  `<html>
+            <head>
+                <title>Sign Up</title>
+                <meta name = "viewport" content = "width = device-width initial-scale=1" />
+                  <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div class=container-articles>
+                    <a href="/">Home</a>
+                </div>
+                <hr />
+                <h1>Welcome to IMAD</h1>
+                <div>
+                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" />
+                    <input type="text" id="newuname" placeholder="username" />
+                    <input type="password" id="newpassword" />
+                    <input type="text" id="newemail" placeholder="Your email" /></p>
+        <br/><br/>
+        <p align = "center"><input type="submit" id="register_btn" value="Register" /> </p>                             
+            <br>
+                    <center><a href = "/loginUser">Already have an account? Sign In </a> </center>
+                </div>
+                <br><hr>
+               <script type="text/javascript" src="/ui/main.js">
+        </script>
+            </body>
+        </html> ` ;
+        return htmlNewFormTemplate;
 }
         
 app.get('/', function (req, res) {
@@ -169,6 +201,9 @@ app.post('/login',function(req,res){
 });
 app.get('/loginUser',function(req,res){
     res.send(createFormTemplate());
+       });
+app.get('/newUser',function(req,res){
+    res.send(createNewFormTemplate());
        });
 app.get('/check-login',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId){
