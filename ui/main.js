@@ -137,7 +137,7 @@ var register = document.getElementById('register_btn');
 
 // Submit a comment
 var commentbtn = document.getElementById('comment-button');
-if (commentbtn !== undefined) {
+if (commentbtn != undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
     var request1 = new XMLHttpRequest();
