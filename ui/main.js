@@ -1,4 +1,4 @@
-/*var button=document.getElementById('counter');
+var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
     //Create a request
@@ -71,7 +71,7 @@ submit.onclick = function(){
 };
 }
 //Ui for login form
-/*var submitlogin = document.getElementById('login_btn');
+var submitlogin = document.getElementById('login_btn');
 if (submitlogin !== undefined) {
 submitlogin.onclick = function(){
     //make a request to server and send the names
@@ -101,7 +101,7 @@ submitlogin.onclick = function(){
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: username, password: password}));  
 };
-}*/
+}
 //Register new user
 var register = document.getElementById('register_btn');
    if (register !== undefined) {
@@ -136,7 +136,7 @@ var register = document.getElementById('register_btn');
 
 
 // Submit a comment
-/*var commentbtn = document.getElementById('comment-button');
+var commentbtn = document.getElementById('comment-button');
 if (commentbtn !== undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
@@ -170,4 +170,4 @@ commentbtn.onclick = function(){
     request1.send(null);
 };
 }
-*/
+
