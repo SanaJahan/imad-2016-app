@@ -72,9 +72,9 @@ submit.onclick = function(){
 }
 //Ui for login form
 var submitlogin = document.getElementById('login_btn');
-if (submitlogin !== undefined) {
+if (submitlogin != undefined) {
 submitlogin.onclick = function(){
-    //make a request to server and send the names
+    //make a request to server
      var request2 = new XMLHttpRequest();
     request2.onreadystatechange = function() {
       if(request2.readyState===XMLHttpRequest.DONE){
@@ -92,19 +92,19 @@ submitlogin.onclick = function(){
       }
         
           };
-     var username = document.getElementById('username').value;//extract from input
-     var password = document.getElementById('password').value;
+     var e_username = document.getElementById('username').value;//extract from input
+     var e_password = document.getElementById('password').value;
      console.log(username);
      console.log(password);
      request2.open('POST','/login',true);
      //request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
-     request2.send(JSON.stringify({username: username, password: password}));  
+     request2.send(JSON.stringify({username: e_username, password: e_password}));  
 };
 }
 //Register new user
 var register = document.getElementById('register_btn');
-   if (register !== undefined) {
+   if (register != undefined) {
     register.onclick = function () {
         // Create a request object
         var request3 = new XMLHttpRequest();
