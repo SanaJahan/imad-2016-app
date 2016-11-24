@@ -123,13 +123,13 @@ var register = document.getElementById('register_btn');
            
         };
         // Make the request
-        var username = document.getElementById('newusername').value;
-        var uname =  document.getElementById('newuname').value;
-        var email =  document.getElementById('newemail').value;
-        var password = document.getElementById('newpassword').value;
+        var newusername = document.getElementById('newusername').value;
+        var newuname =  document.getElementById('newuname').value;
+        var newemail =  document.getElementById('newemail').value;
+        var newpassword = document.getElementById('newpassword').value;
         request3.open('POST','/create-user', true);
         request3.setRequestHeader('Content-Type', 'application/json');
-        request3.send(JSON.stringify({username: username, name: uname, email: email,  password: password}));  
+        request3.send(JSON.stringify({username: newusername, name: newuname, email: newemail,  password: newpassword}));  
         register.value = 'Registering...';
     };
    }
