@@ -129,7 +129,7 @@ var register = document.getElementById('register_btn');
         var password = document.getElementById('newpassword').value;
         request3.open('POST','/create-user', true);
         request3.setRequestHeader('Content-Type', 'application/json');
-        request3.send(JSON.stringify({username: newusername, name: newuname, email: newemail,  password: newpassword}));  
+        request3.send(JSON.stringify({username: username, name: uname, email: email,  password: password}));  
         register.value = 'Registering...';
     };
    }
