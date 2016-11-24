@@ -65,13 +65,9 @@ function createTemplate(data){
 }
         
 function createFormTemplate(){
-    var title = "register";
-    var heading = "Welcome user";
-    var date = data.date;
-
         var htmlFormTemplate =  `<html>
             <head>
-                <title>${title}</title>
+                <title>Login</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
@@ -81,10 +77,7 @@ function createFormTemplate(){
                     <a href="/">Home</a>
                 </div>
                 <hr />
-                <h1>${heading}</h1>
-                <div>
-                    ${date.toDateString()}
-                </div>
+                <h1>Welcome to IMAD</h1>
                 <div>
                      <input type="text" id ="username" placeholder="Enter user name"/>
                                          <input type="password" id ="password"/>
@@ -92,19 +85,9 @@ function createFormTemplate(){
             <br>
                 </div>
                 <br><hr>
-                  <div class = "commentbox">
-                <ul id="commentlist">
-                    
-                </ul>
-               <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
-               <br>
-               <p align = "center"><button id = "comment-button" >Submit</button></p>
-            </div> 
                <script type="text/javascript" src="/ui/main.js">
         </script>
             </body>
-            
-            
         </html> ` ;
         return htmlFormTemplate;
 }
