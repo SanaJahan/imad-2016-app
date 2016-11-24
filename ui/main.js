@@ -1,4 +1,4 @@
-var button=document.getElementById('counter');
+/*var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
     //Create a request
@@ -136,7 +136,7 @@ var register = document.getElementById('register_btn');
 
 
 // Submit a comment
-var commentbtn = document.getElementById('comment-button');
+/*var commentbtn = document.getElementById('comment-button');
 if (commentbtn !== undefined) {
 commentbtn.onclick = function(){
     //Make request to server to send the comments
@@ -170,3 +170,4 @@ commentbtn.onclick = function(){
     request1.send(null);
 };
 }
+*/
