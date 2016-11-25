@@ -258,10 +258,24 @@ app.get('/submit-name',function(req,res){
 var comments = [];
 app.get('/submit-comment',function(req,res){
    var comment = req.query.comment;//query does  is -> url ://submit-comment?comment=xxxxx;
+   var time = Date.now();
     if (comments === undefined)
-  comments = [];  
-  comments.push(comment);
-   res.send(JSON.stringify(comments));
+        comments = [];  
+        comments.push(comment);
+        res.send(JSON.stringify(comments));
+    
+    /*
+   
+  pool.query('INSERT INTO "comment" (article_id,user_id,comment,timestamp) VALUES ($1,$2,$3,$4)',[username,uname,comment,time],function(err,result){
+     if(err){
+           res.status(500).send(err.toString());
+       }
+       else{
+        res.send('User created succesfully '+ username);
+     }
+  });
+});
+    */
 });
 app.get('/fetchcomments', function(req, res) {
   var comment = req.query.comment;
