@@ -94,8 +94,12 @@ submitlogin.onclick = function(){
           };
      var e_username = document.getElementById('username').value;//extract from input
      var e_password = document.getElementById('password').value;
-     console.log(username);
-     console.log(password);
+     if (e_username === '' || e_password === '') {
+        alert("Username/Password field can't be left empty");
+        return;
+     }
+     //console.log(username);
+     //console.log(password);
      request2.open('POST','/login',true);
      //request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
@@ -127,6 +131,9 @@ var register = document.getElementById('register_btn');
         var newuname =  document.getElementById('newuname').value;
         var newemail =  document.getElementById('newemail').value;
         var newpassword = document.getElementById('newpassword').value;
+        if(newusername === '' || newuname === '' || newemail === '' || newpassword === ''){
+           alert("PLease fill up all the fields");
+           }
         request3.open('POST','/create-user', true);
         request3.setRequestHeader('Content-Type', 'application/json');
         request3.send(JSON.stringify({username: newusername, name: newuname, email: newemail,  password: newpassword}));  
