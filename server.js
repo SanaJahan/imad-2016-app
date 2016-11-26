@@ -240,7 +240,7 @@ app.get('/articles/:articleName',function(req,res){
 
 });
 app.get('/get-articles',function(req,res){
-    pool.query('SELECT * FROM article ORDER BY date DESC' , fucntion (err,result){
+    pool.query('SELECT * FROM article ORDER BY date DESC' , function (err,result){
     if(err){
         res.status(500).send(err.toString());
     }
