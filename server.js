@@ -367,7 +367,9 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/favicon.ico', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
-
+app.get('/ui/stock-vector-vector-illustration-of-paper-scroll-with-feather-pen-and-ink-pot-on-white-background-103939787.jpg',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','stock-vector-vector-illustration-of-paper-scroll-with-feather-pen-and-ink-pot-on-white-background-103939787.jpg'));
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
