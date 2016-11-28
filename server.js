@@ -70,7 +70,44 @@ function createFormTemplate(){
                 <title>Login</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
-                <link href="/ui/style.css" rel="stylesheet" />
+               <style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+input[type=text]:focus {
+    background-color: lightblue;
+}
+</style>
+                
             </head>
             <body>
                 <div class=container-articles>
@@ -79,14 +116,15 @@ function createFormTemplate(){
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                     <input type="text" id ="username" placeholder="Enter user name"/>
+                     <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
                                          <input type="password" id ="password"/>
-                                         <input type="submit" id ="login_btn" />                              
+                                         <button class = "button " id ="login_btn"> Login </button>                              
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
                 </div>
                 <br><hr>
                <script type="text/javascript" src="/ui/main.js">
+               <script type="text/javascript" src="/ui/login.js">
         </script>
             </body>
         </html> ` ;
