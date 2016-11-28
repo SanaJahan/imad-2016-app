@@ -145,7 +145,7 @@ input[type=password]:focus {
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
-                </div
+                </div>
                 <br><hr>
                <script type="text/javascript" src="/ui/main.js">
                <script type="text/javascript" src="/ui/login.js">
