@@ -106,6 +106,19 @@ input[type=text] {
 input[type=text]:focus {
     background-color: lightblue;
 }
+input[type=password] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+input[type=password]:focus {
+    background-color: lightblue;
+}
 </style>
                 
             </head>
@@ -117,8 +130,8 @@ input[type=text]:focus {
                 <h1>Welcome to IMAD</h1>
                 <div>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
-                                         <input type="password" id ="password"/>
-                                         <button class = "button " id ="login_btn"> Login </button>                              
+                                         <input type="password" id ="password" placeholder = "Enter password"/><br><br>
+                                        <center> <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
                 </div>
