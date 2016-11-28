@@ -129,9 +129,9 @@ input[type=password]:focus {
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                     <center> <label for="username">Enter UserName :  </label>
+                     <center> <label for="username">Enter UserName :  </label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
-                     <label for="password">Enter Password : </label>
+                     <label for="password">Enter Password : </label><br>
                      <input type="password" id ="password" placeholder = "Enter password"/><br><br>
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
@@ -223,13 +223,13 @@ input[type=email]:focus {
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                   <p align = "center"><label> ENTER YOUR NAME: </label>
+                   <p align = "center"><label> ENTER YOUR NAME: </label><br>
                     <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
-                    <label> ENTER USERNAME: </label>
+                    <label> ENTER USERNAME: </label><br>
                     <input type="text" id="newuname" placeholder="username" /></br><br>
-                    <label> ENTER YOUR EMAIL:   </label>
+                    <label> ENTER YOUR EMAIL:   </label><br>
                     <input type="email" id="newemail" placeholder="Your email" /><br /><br/>
-                    <label> ENTER PASSWORD: </label>
+                    <label> ENTER PASSWORD: </label><br>
                     <input type="password" id="newpassword" placeholder = "Create a new password" /></p>
         <br/><br/>
         <p align = "center"><button class="button" id="register_btn"/>Register</button> </p>                             
