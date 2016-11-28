@@ -224,9 +224,9 @@ input[type=email]:focus {
                    <p align = "center"><label> ENTER YOUR NAME: </label> <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
                     <label> ENTER USERNAME: </label><input type="text" id="newuname" placeholder="username" /></br><br>
                     <label> ENTER YOUR EMAIL:   </label><input type="email" id="newemail" placeholder="Your email" /><br /><br/>
-                    <label> ENTER PASSWORD: </label><input type="password" id="newpassword" /></p>
+                    <label> ENTER PASSWORD: </label><input type="password" id="newpassword" placeholder = "Create a new password" /></p>
         <br/><br/>
-        <p align = "center"><button id="register_btn"/>Register</button> </p>                             
+        <p align = "center"><button class="button" id="register_btn"/>Register</button> </p>                             
             <br>
                     <center><a href = "/loginUser">Already have an account? Sign In </a> </center>
                 </div>
