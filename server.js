@@ -130,12 +130,13 @@ input[type=password]:focus {
 </style>
                 
             </head>
+            <div id="login">
             <body>
                 <div class=container-articles>
                     <a href="/">Home</a>
                 </div>
                 <hr />
-                <div id="login">
+                
                 <h1>Welcome to IMAD</h1>
                 
                      <center> <label for="username">Enter UserName :  </label><br>
@@ -145,8 +146,8 @@ input[type=password]:focus {
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
-                </div>
                 <br><hr>
+                </div>
                <script type="text/javascript" src="/ui/main.js">
                <script type="text/javascript" src="/ui/login.js">
         </script>
