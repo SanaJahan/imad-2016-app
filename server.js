@@ -96,7 +96,7 @@ function createFormTemplate(){
 input[type=text] {
     border: 2px solid red;
     border-radius: 4px;
-    width: 100%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -109,7 +109,7 @@ input[type=text]:focus {
 input[type=password] {
     border: 2px solid red;
     border-radius: 4px;
-    width: 60%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -129,9 +129,9 @@ input[type=password]:focus {
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                     <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
+                     <center> <label for="username">Enter User Name</label><input type="text" id ="username" placeholder="Enter user name"/><br><br/> <label for="password">Password</label>
                                          <input type="password" id ="password" placeholder = "Enter password"/><br><br>
-                                        <center> <button class = "button " id ="login_btn"> Login </button>  </center>                            
+                                         <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
                 </div>
@@ -149,7 +149,57 @@ function createNewFormTemplate(){
                 <title>Sign Up</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
-                <link href="/ui/style.css" rel="stylesheet" />
+                     <style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+input[type=text]:focus {
+    background-color: lightblue;
+}
+input[type=password,email] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+input[type=password,email]:focus {
+    background-color: lightblue;
+}
+</style>
+                
             </head>
             <body>
                 <div class=container-articles>
@@ -158,12 +208,12 @@ function createNewFormTemplate(){
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" /><br />
-                    <input type="text" id="newuname" placeholder="username" /></br>
-                    <input type="text" id="newemail" placeholder="Your email" /><br />
+                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
+                    <input type="text" id="newuname" placeholder="username" /></br><br>
+                    <input type="email" id="newemail" placeholder="Your email" /><br /><br/>
                     <input type="password" id="newpassword" /></p>
         <br/><br/>
-        <p align = "center"><input type="submit" id="register_btn" value="Register" /> </p>                             
+        <p align = "center"><button id="register_btn" value="Register" /></button> </p>                             
             <br>
                     <center><a href = "/loginUser">Already have an account? Sign In </a> </center>
                 </div>
