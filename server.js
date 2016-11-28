@@ -119,7 +119,7 @@ input[type=password] {
 input[type=password]:focus {
     background-color: lightblue;
 }
-#container-articles {
+#login {
     height: 200px;
     background: red; /* For browsers that do not support gradients */    
     background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
@@ -136,7 +136,7 @@ input[type=password]:focus {
                 </div>
                 <hr />
                 <h1>Welcome to IMAD</h1>
-                <div>
+                <div id="login">
                      <center> <label for="username">Enter UserName :  </label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
                      <label for="password">Enter Password : </label><br>
