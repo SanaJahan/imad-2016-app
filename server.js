@@ -130,25 +130,27 @@ input[type=password]:focus {
 </style>
                 
             </head>
-            <div id="login">
             <body>
                 <div class=container-articles>
                     <a href="/">Home</a>
-                </div>
                 <hr />
+                </div>
                 <h1>Welcome to IMAD</h1>
+                <div id="login">
                      <center> <label for="username">Enter UserName :  </label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
                      <label for="password">Enter Password : </label><br>
                      <input type="password" id ="password" placeholder = "Enter password"/><br><br>
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
-            <br>
+            <br></div>
+            <div id="login">
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
                 <br><hr>
+                </div>
                <script type="text/javascript" src="/ui/main.js">
                <script type="text/javascript" src="/ui/login.js">
         </script>
-            </body></div>
+            </body>
         </html> ` ;
         return htmlFormTemplate;
 }
