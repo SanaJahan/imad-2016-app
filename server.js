@@ -185,7 +185,7 @@ input[type=text] {
 input[type=text]:focus {
     background-color: lightblue;
 }
-input[type=password,email] {
+input[type=password] {
     border: 2px solid red;
     border-radius: 4px;
     width: 50%;
@@ -195,7 +195,20 @@ input[type=password,email] {
     border: 1px solid #555;
     outline: none;
 }
-input[type=password,email]:focus {
+input[type=password]:focus {
+    background-color: lightblue;
+}
+input[type=email] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+input[type=email]:focus {
     background-color: lightblue;
 }
 </style>
@@ -208,10 +221,10 @@ input[type=password,email]:focus {
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                   <p align = "center"> <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
-                    <input type="text" id="newuname" placeholder="username" /></br><br>
-                    <input type="email" id="newemail" placeholder="Your email" /><br /><br/>
-                    <input type="password" id="newpassword" /></p>
+                   <p align = "center"><label> ENTER YOUR NAME: </label> <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
+                    <label> ENTER USERNAME: </label><input type="text" id="newuname" placeholder="username" /></br><br>
+                    <label> ENTER EMAIL: </label><input type="email" id="newemail" placeholder="Your email" /><br /><br/>
+                    <label> ENTER PASSWORD: </label><input type="password" id="newpassword" /></p>
         <br/><br/>
         <p align = "center"><button id="register_btn" value="Register" /></button> </p>                             
             <br>
