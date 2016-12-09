@@ -123,7 +123,6 @@ input[type=password]:focus {
     display: inline-block;
     vertical-align: middle;
     height: 100%;
-    list-style-type: none;
     top:30px;
     padding-left: 15px;
     padding-right: 25px;
@@ -143,6 +142,9 @@ input[type=password]:focus {
 	color: #000;
 	padding: 18px;
 	-webkit-text-stroke:1px black;
+}
+ul{
+    list-style-type: none;
 }
 </style>
                 
