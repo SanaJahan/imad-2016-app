@@ -141,8 +141,7 @@ input[type=password]:focus {
                 
             </head>
             <body bgcolor= "#F4F4F1">
-                <div class=container-articles>
-                <nav id="main" class="menustyle">
+                <nav id="main">
                 <ul>
                 <li><a href="index.html">Sign In</a></li>
                 <li><a href="#">Contact</a></li>
@@ -150,7 +149,6 @@ input[type=password]:focus {
                 <li><a href="#">Profile</a></li>
                 </ul>
                 </nav>
-                </div>
                 <h1>Welcome to IMAD</h1>
                
                      <center> <label for="username"><font size ="+3">Enter UserName :  </font></label><br>
