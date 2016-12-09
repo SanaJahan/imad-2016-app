@@ -121,8 +121,6 @@ input[type=password]:focus {
 }
  #main ul li a {
     display: inline-block;
-    vertical-align: middle;
-    height: 100%;
     top:30px;
     padding-left: 15px;
     padding-right: 25px;
