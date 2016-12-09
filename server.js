@@ -120,7 +120,7 @@ input[type=password]:focus {
     background-color: lightblue;
 }
 #login {
-    height: 200px;
+   
     background: red; /* For browsers that do not support gradients */    
     background: -webkit-linear-gradient(left top, white, lightblue); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(bottom right, white, lightblue); /* For Opera 11.1 to 12.0 */
