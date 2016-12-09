@@ -138,7 +138,6 @@ input[type=password]:focus {
  #main ul li a:hover {
 	background: #fff;
 	color: #000;
-	padding: 18px;
 	-webkit-text-stroke:1px black;
 }
 ul{
