@@ -119,10 +119,6 @@ input[type=password] {
 input[type=password]:focus {
     background-color: lightblue;
 }
-#login {
-    height: 200px;
-    
-}
 </style>
                 
             </head>
