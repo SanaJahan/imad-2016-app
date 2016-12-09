@@ -129,9 +129,9 @@ input[type=password]:focus {
                 </div>
                 <h1>Welcome to IMAD</h1>
                
-                     <center> <label for="username">Enter UserName :  </label><br>
+                     <center> <label for="username"><font size ="+3">Enter UserName :  </font></label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
-                     <label for="password">Enter Password : </label><br>
+                     <label for="password"><font size ="+3">Enter Password : </font></label><br>
                      <input type="password" id ="password" placeholder = "Enter password"/><br><br>
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
