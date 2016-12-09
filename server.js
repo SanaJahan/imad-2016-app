@@ -121,6 +121,7 @@ input[type=password]:focus {
 }
  #main ul li a {
     display: block;
+    border-bottom: 1px solid #555;
     top:30px;
     padding-left: 15px;
     padding-right: 25px;
@@ -142,6 +143,7 @@ input[type=password]:focus {
 }
 ul{
     list-style-type: none;
+    border: 1px solid #555;
 }
 </style>
                 
