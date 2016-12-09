@@ -121,13 +121,15 @@ input[type=password]:focus {
 }
  #main ul li a {
     display: inline-block;
+    vertical-align: middle;
+    height: 100%;
     top:30px;
     padding-left: 15px;
     padding-right: 25px;
     padding-bottom: 15px;
     font-size: 15px;
     font-weight: 400;
-    color: #FFF;
+    color: #080808;
     font-family: "Abhaya Libre";
     text-align: center;
     text-decoration: none;
