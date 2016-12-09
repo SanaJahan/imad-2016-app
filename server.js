@@ -122,7 +122,7 @@ input[type=password]:focus {
 </style>
                 
             </head>
-            <body bgcolor= "#DEA694">
+            <body bgcolor= "#DAF7A6">
                 <div class=container-articles>
                     <a href="/">Home</a>
                 <hr />
