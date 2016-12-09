@@ -142,7 +142,6 @@ input[type=password]:focus {
 }
 ul{
     list-style-type: none;
-    background : #B0B486;
 }
 </style>
                 
@@ -157,7 +156,7 @@ ul{
                 </ul>
                 </nav>
                 <br><br>
-                <h1><center>Welcome to IMAD</center></h1>
+                <h1><center><u>Welcome to IMAD</u></center></h1><br>
                      <center> <label for="username"><font size ="+3">Enter UserName :  </font></label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
                      <label for="password"><font size ="+3">Enter Password : </font></label><br>
