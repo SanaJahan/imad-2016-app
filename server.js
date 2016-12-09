@@ -117,12 +117,12 @@ input[type=password] {
     outline: none;
 }
 input[type=password]:focus {
-    background-color: lightblue;
+    background-color: #A8A5A4;
 }
 </style>
                 
             </head>
-            <body>
+            <body bgcolor= ">
                 <div class=container-articles>
                     <a href="/">Home</a>
                 <hr />
