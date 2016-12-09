@@ -120,9 +120,7 @@ input[type=password]:focus {
     background-color: #D0CCCB ;
 }
  #main ul li a {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+    display: block;
     top:30px;
     padding-left: 15px;
     padding-right: 25px;
