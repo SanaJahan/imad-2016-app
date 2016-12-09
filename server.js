@@ -119,13 +119,37 @@ input[type=password] {
 input[type=password]:focus {
     background-color: #D0CCCB ;
 }
+ #main ul li a {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    top:30px;
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #FFF;
+    font-family: "Abhaya Libre";
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    float : right;
+    margin:auto;
+}
 </style>
                 
             </head>
             <body bgcolor= "#F4F4F1">
                 <div class=container-articles>
-                    <a href="/">Home</a>
-                <hr />
+                <nav id="main" class="menustyle">
+                <ul>
+                <li><a href="index.html">Sign In</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Profile</a></li>
+                </ul>
+                </nav>
                 </div>
                 <h1>Welcome to IMAD</h1>
                
