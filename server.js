@@ -104,7 +104,7 @@ input[type=text] {
     outline: none;
 }
 input[type=text]:focus {
-    background-color: #A8A5A4;
+    background-color: lightblue;
 }
 input[type=password] {
     border: 2px solid red;
@@ -117,7 +117,7 @@ input[type=password] {
     outline: none;
 }
 input[type=password]:focus {
-    background-color: #A8A5A4;
+    background-color: lightblue;
 }
 </style>
                 
