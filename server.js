@@ -155,7 +155,8 @@ ul{
                 <li><a href="#">Profile</a></li>
                 </ul>
                 </nav>
-                <h1>Welcome to IMAD</h1>
+                <br><br>
+                <center><h1>Welcome to IMAD</h1></center>
                
                      <center> <label for="username"><font size ="+3">Enter UserName :  </font></label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
