@@ -62,7 +62,7 @@ nav#main ul li{
 nav#main li a:visited, a:link, a:active{
 	font-size: 80%;
 	font-family: "Ubuntu";
-	/*text-transform: uppercase;*/
+	text-transform: uppercase;
 	font-weight: 600;
 	color: #393f4a;
     text-decoration: none;
