@@ -59,12 +59,19 @@ nav#main ul li{
 	display: inline-block;
 	margin: 30px;
 }
-nav#main li a{
+nav#main li a:visited, a:link, a:active{
 	font-size: 80%;
 	font-family: "Ubuntu";
 	/*text-transform: uppercase;*/
 	font-weight: 600;
 	color: #393f4a;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+ nav#main ul li a:hover {
+	background: #fff;
+	color: #000;
+	-webkit-text-stroke:1px black;
 }
 /* features */
 .feature {
