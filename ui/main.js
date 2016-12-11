@@ -86,6 +86,7 @@ submitlogin.onclick = function(){
         alert('Username/Password incorrect');
         document.getElementById('username').value="";
         document.getElementById('password').value="";
+        document.getElementById('username').focus();
     }
      else if(request2.status===500){
         alert('Something went wrong with the server');
@@ -96,6 +97,7 @@ submitlogin.onclick = function(){
      var e_password = document.getElementById('password').value;
      if (e_username === '' || e_password === '') {
         alert("Username/Password field can't be left empty");
+        e_username.focus();
         return;
      }
      //console.log(username);
