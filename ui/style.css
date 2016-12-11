@@ -74,6 +74,10 @@ nav#main li a:visited, a:link, a:active{
 	color: #000;
 	-webkit-text-stroke:0.7px black;
 	background-color:white;
+	 padding-left: 15px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    padding-top:15px;
 }
 /* features */
 .feature {
