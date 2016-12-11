@@ -60,13 +60,15 @@ nav#main ul li{
 	margin: 30px;
 }
 nav#main li a:visited, a:link, a:active{
-	font-size: 1.5px;
 	font-family: "Ubuntu";
 	/*text-transform: uppercase;*/
 	font-weight: 600;
 	color: #393f4a;
     text-decoration: none;
     color: #FFFFFF;
+}
+nav#main li a{
+    font-size: 1.5px;
 }
  nav#main ul li a:hover {
 	background: #fff;
