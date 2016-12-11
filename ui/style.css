@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5{
 	font-size: 3em;
 	color: black;
 	font-weight:700;
-	font-family: "Ubuntu";
+	font-family: "Pacifico";
 }
 .background-orange{
 	background-color: #f8bc3b;
@@ -61,7 +61,7 @@ nav#main ul li{
 }
 nav#main li a:visited, a:link, a:active{
 	font-size: 80%;
-	font-family: "Pacifico";
+	font-family: "Ubuntu";
 	text-transform: uppercase;
 	font-weight: 600;
 	color: #393f4a;
