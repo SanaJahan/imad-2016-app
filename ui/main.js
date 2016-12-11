@@ -86,7 +86,6 @@ submitlogin.onclick = function(){
         alert('Username/Password incorrect');
         document.getElementById('username').value="";
         document.getElementById('password').value="";
-        $("#username").focus();
     }
      else if(request2.status===500){
         alert('Something went wrong with the server');
