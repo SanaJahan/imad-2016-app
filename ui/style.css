@@ -60,7 +60,7 @@ nav#main ul li{
 	margin: 30px;
 }
 nav#main li a:visited, a:link, a:active{
-	font-size: 80%;
+	font-size: 1.5px;
 	font-family: "Ubuntu";
 	/*text-transform: uppercase;*/
 	font-weight: 600;
