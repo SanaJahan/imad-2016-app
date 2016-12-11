@@ -125,6 +125,7 @@ input[type=password]:focus {
     padding-left: 15px;
     padding-right: 25px;
     padding-bottom: 15px;
+    padding-top: 15px;
     font-size: 15px;
     font-weight: 400;
     color: #080808;
