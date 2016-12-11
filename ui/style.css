@@ -68,7 +68,7 @@ nav#main li a:visited, a:link, a:active{
     color: #FFFFFF;
 }
 nav#main li a{
-    font-size: 1.5px;
+    font-size: 90%;
 }
  nav#main ul li a:hover {
 	background: #fff;
