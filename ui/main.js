@@ -1,4 +1,4 @@
-var button=document.getElementById('counter');
+/*var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
     //Create a request
@@ -33,7 +33,7 @@ button.onclick = function() {
   
     
 };
-}
+}*/
 
 // Submit name
 
@@ -84,13 +84,13 @@ submitlogin.onclick = function(){
     }
     else if(request2.status===403){
         alert('Username/Password incorrect');
+        document.getElementById('username').value='';
+        document.getElementById('password').value='';
     }
      else if(request2.status===500){
         alert('Something went wrong with the server');
     }
-          //loadLoginForm();
       }
-        
           };
      var e_username = document.getElementById('username').value;//extract from input
      var e_password = document.getElementById('password').value;
