@@ -150,7 +150,7 @@ ul{
             <body bgcolor= "#F4F4F1">
                 <nav id="main">
                 <ul>
-                <li><a href="index.html">Sign In</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Articles</a></li>
                 <li><a href="#">Profile</a></li>
