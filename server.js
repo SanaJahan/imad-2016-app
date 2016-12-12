@@ -254,7 +254,7 @@ input[type=email]:focus {
                    <p align = "center"><label> ENTER YOUR USERNAME: </label><br>
                     <input type="text" id="newusername" placeholder="Your user name" /><br /><br/>
                     <label> ENTER YOUR NAME: </label><br>
-                    <input type="text" id="newuname" placeholder="username" /></br><br>
+                    <input type="text" id="newuname" placeholder="Your good name" /></br><br>
                     <label> ENTER YOUR EMAIL:   </label><br>
                     <input type="email" id="newemail" placeholder="Your email" /><br /><br/>
                     <label> ENTER PASSWORD: </label><br>
