@@ -251,9 +251,9 @@ input[type=email]:focus {
                 <hr />
                 <h1>Welcome to IMAD</h1>
                 <div>
-                   <p align = "center"><label> ENTER YOUR NAME: </label><br>
-                    <input type="text" id="newusername" placeholder="Your good name" /><br /><br/>
-                    <label> ENTER USERNAME: </label><br>
+                   <p align = "center"><label> ENTER YOUR USERNAME: </label><br>
+                    <input type="text" id="newusername" placeholder="Your user name" /><br /><br/>
+                    <label> ENTER YOUR NAME: </label><br>
                     <input type="text" id="newuname" placeholder="username" /></br><br>
                     <label> ENTER YOUR EMAIL:   </label><br>
                     <input type="email" id="newemail" placeholder="Your email" /><br /><br/>
