@@ -35,7 +35,7 @@ function createTemplate(data){
                 <link href="/ui/style.css" rel="stylesheet" />
             </head>
             <body>
-                <div class=articles>
+                <div class="articles">
                     <a href="/">Home</a>
                 </div>
                 <hr />
@@ -54,6 +54,7 @@ function createTemplate(data){
                 <center>Loading comments...</center>
               </div>
           </div>
+          <script type="text/javascript" src="/ui/main.js"></script>
           <script type="text/javascript" src="/ui/article.js"></script>
       </body>
             
