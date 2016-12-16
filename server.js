@@ -47,18 +47,15 @@ function createTemplate(data){
                    ${content}
                 </div>
                 <br><hr>
-                  <div class = "commentbox">
-                <ul id="commentlist">
-                    
-                </ul>
-               <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
-               <br>
-               <p align = "center"><button id = "comment-button" >Submit</button></p>
-            </div> 
-               <script type="text/javascript" src="/ui/main.js">
-        </script>
-            </body>
-            
+                   <h4>Comments</h4>
+              <div id="comment_form">
+              </div>
+              <div id="comments">
+                <center>Loading comments...</center>
+              </div>
+          </div>
+          <script type="text/javascript" src="/ui/article.js"></script>
+      </body>
             
         </html> ` ;
         return htmlTemplate;
