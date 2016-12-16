@@ -181,10 +181,10 @@ commentbtn.onclick = function(){
 }*/
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('loginArea');
-    loginArea.innerHTML = `
+    /*loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
         <a href="/logout">Logout</a>
-    `;
+    `;*/
 }
 
 function loadLogin () {
