@@ -156,6 +156,7 @@ ul{
                 </nav>
                 <br><br>
                 <h1><center><u>Welcome to IMAD</u></center></h1><br>
+                    <div id="loginArea">
                      <center> <label for="username"><font size ="+2">Enter UserName :  </font></label><br>
                      <input type="text" id ="username" placeholder="Enter user name"/><br><br/>
                      <label for="password"><font size ="+2">Enter Password : </font></label><br>
@@ -163,7 +164,7 @@ ul{
                      <button class = "button " id ="login_btn"> Login </button>  </center>                            
             <br>
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
-                <br><hr>
+                <br><hr></div>
                <script type="text/javascript" src="/ui/main.js">
         </script>
             </body>
