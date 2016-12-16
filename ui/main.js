@@ -178,14 +178,14 @@ commentbtn.onclick = function(){
    //request.open('GET',document.URL+'counter',true);
     request1.send(null);
 };
-}
+}*/
 function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('login_area');
+    var loginArea = document.getElementById('loginArea');
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
         <a href="/logout">Logout</a>
     `;
-}*/
+}
 
 function loadLogin () {
     // Check if the user is already logged in
@@ -193,7 +193,7 @@ function loadLogin () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-               alert("You are logged in");
+                 loadLoggedInUser(this.responseText);
             } else {
                document.location.href = "/loginUser";
             }
