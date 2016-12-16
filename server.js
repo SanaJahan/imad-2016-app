@@ -488,9 +488,6 @@ app.get('/fetchcomments', function(req, res) {
 app.get('/ui/main.js', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-app.get('/ui/main.js', function (req, res) {
-res.sendFile(path.join(__dirname, 'ui', 'article.js'));
-});
 //When not using database then creating end-point to handle articel request response
 /*app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
@@ -500,7 +497,9 @@ res.sendFile(path.join(__dirname, 'ui', 'article.js'));
 /*app.get('/ui/login.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });*/
-
+app.get('/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
