@@ -90,6 +90,7 @@ submitlogin.onclick = function(){
      else if(request2.status===500){
         alert('Something went wrong with the server');
     }
+    loadLogin();
       }
           };
      var e_username = document.getElementById('username').value;//extract from input
@@ -104,6 +105,7 @@ submitlogin.onclick = function(){
      //request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: e_username, password: e_password}));  
+     submit.value='logging in..';
 };
 }
 //Register new user
@@ -176,14 +178,14 @@ commentbtn.onclick = function(){
    //request.open('GET',document.URL+'counter',true);
     request1.send(null);
 };
-}*/
+}
 function loadLoggedInUser (username) {
     var loginArea; 
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
         <a href="/logout">Logout</a>
     `;
-}
+}*/
 
 function loadLogin () {
     // Check if the user is already logged in
