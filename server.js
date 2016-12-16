@@ -165,7 +165,6 @@ ul{
                     <center><a href = "/newUser">New User? Sign Up </a> </center>
                 <br><hr>
                <script type="text/javascript" src="/ui/main.js">
-               <script type="text/javascript" src="/ui/login.js">
         </script>
             </body>
         </html> ` ;
