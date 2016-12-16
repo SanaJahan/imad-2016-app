@@ -497,7 +497,7 @@ res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 /*app.get('/ui/login.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });*/
-app.get('/article.js', function (req, res) {
+app.get('/ui/article.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article.js'));
 });
 
