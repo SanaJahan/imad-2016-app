@@ -33,13 +33,6 @@ function createTemplate(data){
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                 <script> $(document).ready(function(){
-                  $(this).focus(function(){
-                     $(this).css("background-color", "#cccccc");
-    });
-});
-</script>
             </head>
             <body>
                 <div id="articles">
