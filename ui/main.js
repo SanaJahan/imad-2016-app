@@ -214,7 +214,8 @@ function loadArticles () {
                     }
                      </style>
                       </head>
-                        <body bgcolor= "#F4F4F1">
+                        <body bgcolor= "#FAEBD7">
+                        <br><br>
                             <nav id="list">
                             <ul>
                             <li>
