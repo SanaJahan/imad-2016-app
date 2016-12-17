@@ -34,6 +34,11 @@ function createTemplate(data){
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                 $(document).ready(function(){
+                  $(this).focus(function(){
+                     $(this).css("background-color", "#cccccc");
+    });
+});
             </head>
             <body>
                 <div id="articles">
@@ -50,11 +55,7 @@ function createTemplate(data){
                 <br><hr>
                    <h4>Comments</h4>
               <div id="comment_form">
-                $(document).ready(function(){
-                  $(this).focus(function(){
-                     $(this).css("background-color", "#cccccc");
-    });
-});
+               
               </div>
               <div id="comments">
                 <center>Loading comments...</center>
