@@ -184,12 +184,11 @@ function loadArticles () {
                 for (var i=0; i< articleData.length; i++) {
                     content += `<html>
             <head>
-                <title>Sign Up</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
-                                         #list ul li a {
-                        display: inline-block;
+                        #list ul li a {
+                        display: inline;
                         top:30px;
                         padding-left: 15px;
                         padding-right: 25px;
@@ -206,7 +205,7 @@ function loadArticles () {
                         margin:auto;
                     }
                      #list ul li a:hover {
-                    	background: #fff;
+                    	background: lightblue;
                     	color: #000;
                     	-webkit-text-stroke:1px black;
                     }
