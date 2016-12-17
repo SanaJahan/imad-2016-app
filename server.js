@@ -31,8 +31,9 @@ function createTemplate(data){
             <head>
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
-                  <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
+                <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             </head>
             <body>
                 <div id="articles">
