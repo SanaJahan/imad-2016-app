@@ -36,18 +36,17 @@ function createTemplate(data){
             </head>
             <body>
                 <div id="articles">
-                    <a href="/">Home</a>
                 </div>
-                <hr />
-                <h1>${heading}</h1>
+                <br><br>
+                <center><h1>${heading}</h1></center>
                 <div>
-                    ${date.toDateString()}
+                    <p align="right">${date.toDateString()}</p><br><br>
                 </div>
-                <div>
+                <div style="font-family: Pacifico;font-size: 1.5em">
                    ${content}
                 </div>
                 <br><hr>
-                   <h4>Comments</h4>
+                   <center><i><h4>Comments</h4></i></center>
               <div id="comment_form">
               </div>
               <div id="comments">
