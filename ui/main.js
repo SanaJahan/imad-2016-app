@@ -189,7 +189,7 @@ function loadArticles () {
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
                                          #list ul li a {
-                        display: block;
+                        display: inline-block;
                         top:30px;
                         padding-left: 15px;
                         padding-right: 25px;
