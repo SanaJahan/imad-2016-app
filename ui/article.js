@@ -107,7 +107,7 @@ function loadComments () {
                         }
 
                         .commenter {
-                          text-align: center;
+                          text-align: left;
                         }
                     </style>
                         <div class="comment">
