@@ -188,7 +188,7 @@ function loadArticles () {
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
                         #list ul li a {
-                        display: inline;
+                        display: inline-block;
                         top:30px;
                         padding-left: 15px;
                         padding-right: 25px;
@@ -219,9 +219,9 @@ function loadArticles () {
                             <ul>
                             <li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    </li></nav><br><br></body>`;
+                    </li>`;
                 }
-                content += "</ul>"
+                content += "</ul></nav><br><br></body>"
                 articles.innerHTML = content;
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
