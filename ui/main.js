@@ -188,29 +188,39 @@ function loadArticles () {
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
-                     #articles li a {
-                      display: block;
-                      padding: 5px 5px 5px 0.5em;
-                      border-left: 10px solid #1958b7;
-                      border-right: 10px solid #508fc4;
-                      background-color: #2175bc;
-                      color: #fff;
-                      text-decoration: none;
-                      width: 100%;
-                      } html>body #button li a {
-                      width: auto;
-                      } #articles li a:hover {
-                      border-left: 10px solid #1c64d1;
-                      border-right: 10px solid #5ba3e0;
-                      background-color: #2586d7;
-                      color: #fff;
-                      }
+                                         #list ul li a {
+                        display: block;
+                        top:30px;
+                        padding-left: 15px;
+                        padding-right: 25px;
+                        padding-bottom: 15px;
+                        padding-top: 15px;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: #080808;
+                        font-family: "Abhaya Libre";
+                        text-align: center;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        float : right;
+                        margin:auto;
+                    }
+                     #list ul li a:hover {
+                    	background: #fff;
+                    	color: #000;
+                    	-webkit-text-stroke:1px black;
+                    }
+                    ul{
+                        list-style-type: none;
+                    }
                      </style>
-                     <body>
-                     <div id="articles">
-                     <li>
+                      </head>
+                        <body bgcolor= "#F4F4F1">
+                            <nav id="list">
+                            <ul>
+                            <li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li></div></body>`;
+                    </li></nav><br><br></body>`;
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
