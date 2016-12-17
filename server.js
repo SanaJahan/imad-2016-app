@@ -33,6 +33,8 @@ function createTemplate(data){
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
+                <link rel="stylesheet"
+                 href="https://fonts.googleapis.com/css?family=Baloo Tamma|David Libre|Open Sans Condensed|Ubuntu|Pavanam|Pacifico">
             </head>
             <body>
                 <div id="articles">
