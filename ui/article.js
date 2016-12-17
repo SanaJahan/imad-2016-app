@@ -3,6 +3,14 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
+    <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     $(document).ready(function(){
+    $("#comment_text").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+});
+    </head>
         <h5>Submit a comment</h5>
         <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/>
