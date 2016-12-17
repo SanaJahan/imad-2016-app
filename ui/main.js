@@ -205,7 +205,7 @@ function loadArticles () {
                         margin:auto;
                     }
                      #list ul li a:hover {
-                    	background: lightblue;
+                    	background: #FFCC00;
                     	color: #000;
                     	-webkit-text-stroke:1px black;
                     }
