@@ -3,10 +3,31 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-        <h5>Submit a comment</h5>
         <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
-        <br/>
-        <input type="submit" id="submit" value="Submit" />
+        <br/><br/>
+       <style>#submit{
+              display: inline-block;
+              padding: 10px 15px;
+              font-size: 20px;
+              cursor: pointer;
+              text-align: center;
+              text-decoration: none;
+              outline: none;
+              color: #fff;
+              background-color: #4CAF50;
+              border: none;
+              border-radius: 15px;
+              box-shadow: 0 9px #999;
+            }
+            
+            #submit:hover {background-color: #3e8e41}
+            
+            #submit:active {
+              background-color: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }</style>
+        <div id="submit"><input type="submit" id="submit" value="Submit" /></div>
         <br/>
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
