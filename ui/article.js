@@ -112,7 +112,7 @@ function loadComments () {
                     </style>
                         <div class="comment">
                          <div class="commenter">
-                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString() says:-} 
+                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} says-:
                          </div>
                           <p >${escapeHTML(commentsData[i].comment)}</p>
                     </div>`;
