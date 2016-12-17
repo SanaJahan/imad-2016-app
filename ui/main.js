@@ -201,7 +201,7 @@ function loadArticles () {
                         text-align: center;
                         text-decoration: none;
                         text-transform: uppercase;
-                        float : right;
+                        float : left;
                         margin:auto;
                     }
                      #list ul li a:hover {
