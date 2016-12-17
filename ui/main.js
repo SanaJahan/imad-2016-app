@@ -199,7 +199,7 @@ function loadArticles () {
                       width: 100%;
                       } html>body #button li a {
                       width: auto;
-                      } .a li a:hover {
+                      } div li a:hover {
                       border-left: 10px solid #1c64d1;
                       border-right: 10px solid #5ba3e0;
                       background-color: #2586d7;
