@@ -36,7 +36,7 @@ button.onclick = function() {
 }*/
 
 // Submit name
-
+/*
 var submit = document.getElementById('submit_btn');
 if (submit != undefined) {
 submit.onclick = function(){
@@ -69,7 +69,7 @@ submit.onclick = function(){
    //request.open('GET',document.URL+'counter',true);
     request.send(null);
 };
-}
+}*/
 //function for login form
 var submitlogin = document.getElementById('login_btn');
 if (submitlogin != undefined) {
@@ -182,9 +182,35 @@ function loadArticles () {
                 var content = '<ul>';
                 var articleData = JSON.parse(this.responseText);
                 for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
+                    content += `<html>
+            <head>
+                <title>Sign Up</title>
+                <meta name = "viewport" content = "width = device-width initial-scale=1" />
+                  <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
+                     <style>
+                     div li a {
+                      display: block;
+                      padding: 5px 5px 5px 0.5em;
+                      border-left: 10px solid #1958b7;
+                      border-right: 10px solid #508fc4;
+                      background-color: #2175bc;
+                      color: #fff;
+                      text-decoration: none;
+                      width: 100%;
+                      } html>body #button li a {
+                      width: auto;
+                      } .a li a:hover {
+                      border-left: 10px solid #1c64d1;
+                      border-right: 10px solid #5ba3e0;
+                      background-color: #2586d7;
+                      color: #fff;
+                      }
+                     </style>
+                     <body>
+                     <div>
+                     <li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
+                    (${articleData[i].date.split('T')[0]})</li></div></body>`;
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
