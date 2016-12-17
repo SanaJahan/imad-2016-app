@@ -27,7 +27,7 @@ function loadCommentForm () {
               box-shadow: 0 5px #666;
               transform: translateY(4px);
             }</style>
-        <div id="submit"><input type="submit" id="submit" value="Submit" /></div>
+        <input type="submit" id="submit" value="Submit" />
         <br/>
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
