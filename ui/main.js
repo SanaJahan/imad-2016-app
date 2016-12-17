@@ -212,10 +212,12 @@ function loadArticles () {
                     ul{
                         list-style-type: none;
                     }
+                    body{
+                         background-color:yellow;
+                    }
                      </style>
                       </head>
-                        <body bgcolor= "#FAEBD7">
-                        <br><br>
+                        <body>
                             <nav id="list">
                             <ul>
                             <li>
