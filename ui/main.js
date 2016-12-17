@@ -188,7 +188,7 @@ function loadArticles () {
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
-                     div li a {
+                     #articles li a {
                       display: block;
                       padding: 5px 5px 5px 0.5em;
                       border-left: 10px solid #1958b7;
@@ -199,7 +199,7 @@ function loadArticles () {
                       width: 100%;
                       } html>body #button li a {
                       width: auto;
-                      } div li a:hover {
+                      } #articles li a:hover {
                       border-left: 10px solid #1c64d1;
                       border-right: 10px solid #5ba3e0;
                       background-color: #2586d7;
