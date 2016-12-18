@@ -335,7 +335,7 @@ app.post('/login',function(req,res){
         var salt = dbString.split('$')[2];
         var hashedPassword = hash(password,salt);
         if(hashedPassword===dbString){
-          req.session.auth = {userId: result.rows[0].id};
+          req.session.auth = {userId: result.rows[0].id,username: result.rows[0].username};
           res.send('Credentials correct !');
         }
         else{
@@ -353,8 +353,8 @@ app.get('/newUser',function(req,res){
     res.send(createNewFormTemplate());
        });
 app.get('/check-login',function(req,res){
-   if(req.session && req.session.auth && req.session.auth.userId){
-       res.send('Hi'+req.session.auth.userId.toString());
+   if(req.session && req.session.auth && req.session.auth.userId && req.session.auth.username){
+       res.send('Hi '+req.session.auth.username.toString());
    }
    else{
        res.send('You are not logged in');
