@@ -171,7 +171,7 @@ function loadLoggedInUser (username) {
     float : right;
     margin:auto;
 }
- #main ul li a:hover {
+ #user ul li a:hover {
 	background: #fff;
 	color: #000;
 	-webkit-text-stroke:1px black;
