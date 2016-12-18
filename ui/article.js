@@ -14,13 +14,13 @@ function loadCommentForm () {
               text-decoration: none;
               outline: none;
               color: #fff;
-              background-color: #4CAF50;
+              background-color: #CC00FF;
               border: none;
               border-radius: 15px;
               box-shadow: 0 9px #999;
             }
             
-            #submit:hover {background-color: #3e8e41}
+            #submit:hover {background-color: #CC00CC;}
             
             #submit:active {
               background-color: #3e8e41;
