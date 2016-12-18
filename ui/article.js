@@ -81,6 +81,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
+                loadLoggedInUser(this.responseText);
             }
         }
     };
