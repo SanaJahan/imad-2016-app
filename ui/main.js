@@ -153,6 +153,42 @@ var register = document.getElementById('register_btn');
 }*/
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('loginArea');
+    var isLogged = document.getElementById('isLogged');
+    isLogged.innerHTML = `<style> #user ul li a {
+    display: block;
+    top:30px;
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #080808;
+    font-family: "Abhaya Libre";
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    float : right;
+    margin:auto;
+}
+ #main ul li a:hover {
+	background: #fff;
+	color: #000;
+	-webkit-text-stroke:1px black;
+}
+ul{
+    list-style-type: none;
+}
+</style>
+                
+            </head>
+                <nav id="user">
+                <ul>
+                <li> Hi <i>${username}</i></li>
+                <li><a href="/logout">Logout</a></li>
+                </ul>
+                </nav>
+    `;
 }
 
 function loadLogin () {
