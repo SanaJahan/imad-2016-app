@@ -184,7 +184,7 @@ ul{
             </head>
                 <nav id="user">
                 <ul>
-                <li> Hi <i>${username}</i></li>
+                <li> Hi <big><b><i>${username}</i><b></big></li>
                 <li><a href="/logout">Logout</a></li>
                 </ul>
                 </nav>
