@@ -13,7 +13,7 @@ function loadCommentForm () {
               border: solid 1px #707070;
               box-shadow: 0 0 5px 1px #969696;
             }</style>
-        <textarea id="comment_text" rows="5" cols="60" placeholder="Enter your comment here..."></textarea>
+        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
        <style>#submit{
               display: inline-block;
@@ -58,7 +58,7 @@ function loadCommentForm () {
                     loadComments();    
                 } else {
                     alert('Please Login to comment');
-                     //document.location.href = "/loginUser";
+                     document.location.href = "/loginUser";
                 }
                 submit.value = 'Submit';
           }
@@ -123,9 +123,9 @@ function loadComments () {
                         <div class="comment">
                          <div class="commenter">
                          <br>
-                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} -:
+                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} says-:
                          </div>
-                          <p style="font-size: 1.2em;font-color:#FFFFFF"> ${escapeHTML(commentsData[i].comment)} </p>
+                          <p style="font-size: 1.2em"> " ${escapeHTML(commentsData[i].comment)} "</p>
                     </div>`;
                 }
                 comments.innerHTML = content;
