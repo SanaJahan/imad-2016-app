@@ -354,7 +354,7 @@ app.get('/newUser',function(req,res){
     res.send(createNewFormTemplate());
        });
 app.get('/check-login',function(req,res){
-   if(req.session && req.session.auth && req.session.auth.userId && req.session.auth.username){
+   if(req.session && req.session.auth && req.session.auth.userId){
        res.send(req.session.auth.username.toString());
    }
    else{
