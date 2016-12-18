@@ -354,7 +354,7 @@ app.get('/newUser',function(req,res){
        });
 app.get('/check-login',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId && req.session.auth.username){
-       res.send('Hi '+req.session.auth.username.toString());
+       res.send(req.session.auth.username.toString());
    }
    else{
        res.send('You are not logged in');
