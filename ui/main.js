@@ -79,7 +79,7 @@ submitlogin.onclick = function(){
     request2.onreadystatechange = function() {
       if(request2.readyState===XMLHttpRequest.DONE){
           if(request2.status===200){
-            alert('Logged in succesfully');
+            //alert('Logged in succesfully');
              document.location.href = "/";
     }
     else if(request2.status===403){
