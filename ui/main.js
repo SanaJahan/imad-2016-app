@@ -154,7 +154,6 @@ var register = document.getElementById('register_btn');
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('loginArea');
     var isLogged = document.getElementById('isLogged');
-    window.onload = function abc(){
     isLogged.innerHTML = `<style> #user ul li a {
     display: block;
     top:30px;
@@ -191,7 +190,6 @@ ul{
                 </nav>
     `;
     }
-}
 
 function loadLogin () {
     // Check if the user is already logged in
