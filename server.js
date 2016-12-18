@@ -357,7 +357,7 @@ app.get('/check-login',function(req,res){
        res.send(req.session.auth.username.toString());
    }
    else{
-       res.send('You are not logged in');
+       res.send('Login');
    }
 });
 
