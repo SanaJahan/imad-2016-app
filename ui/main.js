@@ -199,7 +199,7 @@ function loadLogin () {
             if (request.status === 200) {
                  loadLoggedInUser(this.responseText);
             } else {
-               document.location.href = "/loginUser";
+              // document.location.href = "/loginUser";
             }
         }
     };
