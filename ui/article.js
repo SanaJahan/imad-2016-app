@@ -13,7 +13,7 @@ function loadCommentForm () {
               border: solid 1px #707070;
               box-shadow: 0 0 5px 1px #969696;
             }</style>
-        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
+        <textarea id="comment_text" rows="5" cols="80" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
        <style>#submit{
               display: inline-block;
