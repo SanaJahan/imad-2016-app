@@ -427,6 +427,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
+                                console.log("Could not read file: " + err)
                             } else {
                                 res.status(200).send('Comment inserted!')
                             }
