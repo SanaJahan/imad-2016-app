@@ -410,7 +410,7 @@ app.get('/get-comments/:articleName',function(req,res){
 
 app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
-    if (req.session && req.session.auth && req.session.auth.userId) {
+    if (req.session && req.session.auth && req.session.auth.userId && req.session.auth.username) {
         // First check if the article exists and get the article-id
         pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
             if (err) {
@@ -427,7 +427,6 @@ app.post('/submit-comment/:articleName', function (req, res) {
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
-                                console.log("Could not read file: " + err)
                             } else {
                                 res.status(200).send('Comment inserted!')
                             }
