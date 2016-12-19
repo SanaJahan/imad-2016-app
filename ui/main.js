@@ -196,7 +196,7 @@ function loadArticles () {
                         padding-top: 15px;
                         font-size: 15px;
                         font-weight: 400;
-                        color: #080808;
+                        color: #CC0099;
                         font-family: "Abhaya Libre";
                         text-align: center;
                         text-decoration: none;
