@@ -1,3 +1,4 @@
+
 /*var button=document.getElementById('counter');
 if (button != undefined) {
 button.onclick = function() {
@@ -24,11 +25,8 @@ button.onclick = function() {
     request.open('GET','http://sanajahan.imad.hasura-app.io/counter',true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
-
    request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
-
    //request.open('GET', window.location.protocol+'//'+window.location.host+'/counter', true);
-
     request.send(null);
   
     
@@ -63,7 +61,6 @@ submit.onclick = function(){
     var name = nameInput.value;
     request.open('GET','http://sanajahan.imad.hasura-app.io/submit-name?name='+name,true);
    //for local machine 
-
    request.open('GET', window.location.protocol+'//'+window.location.host+'/submit-name?name='+name, true);
    //for local machine 
    //request.open('GET',document.URL+'counter',true);
@@ -184,11 +181,12 @@ function loadArticles () {
                 for (var i=0; i< articleData.length; i++) {
                     content += `<html>
             <head>
+                <title>Sign Up</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                   <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                      <style>
-                        #list ul li a {
-                        display: inline-block;
+                                         #list ul li a {
+                        display: block;
                         top:30px;
                         padding-left: 15px;
                         padding-right: 25px;
@@ -196,39 +194,32 @@ function loadArticles () {
                         padding-top: 15px;
                         font-size: 15px;
                         font-weight: 400;
-                        color: #CC0099;
+                        color: #080808;
                         font-family: "Abhaya Libre";
                         text-align: center;
                         text-decoration: none;
                         text-transform: uppercase;
-                        float : left;
+                        float : right;
                         margin:auto;
                     }
                      #list ul li a:hover {
-                    	background: #FFCC00;
+                    	background: #fff;
                     	color: #000;
                     	-webkit-text-stroke:1px black;
                     }
                     ul{
                         list-style-type: none;
                     }
-                    body{
-                         background: red; /* For browsers that do not support gradients */
-                         background: -webkit-linear-gradient(#FAF2FD,#E4BFF4); /* For Safari 5.1 to 6.0 */
-                         background: -o-linear-gradient(#FAF2FD,#E4BFF4); /* For Opera 11.1 to 12.0 */
-                         background: -moz-linear-gradient(#FAF2FD,#E4BFF4); /* For Firefox 3.6 to 15 */
-                         background: linear-gradient(#FAF2FD,#E4BFF4); /* Standard syntax */
-                    }
                      </style>
                       </head>
-                        <body>
+                        <body bgcolor= "#F4F4F1">
                             <nav id="list">
                             <ul>
                             <li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    </li>`;
+                    </li></nav><br><br></body>`;
                 }
-                content += "</ul></nav><br><br></body>"
+                content += "</ul>"
                 articles.innerHTML = content;
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
@@ -246,4 +237,3 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
-
