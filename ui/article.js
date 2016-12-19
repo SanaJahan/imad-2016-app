@@ -1,9 +1,19 @@
-// Eg: coco98.imad.hasura-app.io/articles/article-one will result in article-one
+// Eg: sanajahan.imad.hasura-app.io/articles/article-one will result in article-one
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
+         <style>#comment_text {
+              padding: 10px;
+              border: solid 1px #dcdcdc;
+              transition: box-shadow 0.3s, border 0.3s;
+            }
+             #comment_text :focus,
+             {
+              border: solid 1px #707070;
+              box-shadow: 0 0 5px 1px #969696;
+            }</style>
+        <textarea id="comment_text" rows="5" cols="60" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
        <style>#submit{
               display: inline-block;
@@ -14,20 +24,20 @@ function loadCommentForm () {
               text-decoration: none;
               outline: none;
               color: #fff;
-              background-color: #4CAF50;
+              background-color: #CC00FF;
               border: none;
               border-radius: 15px;
               box-shadow: 0 9px #999;
             }
             
-            #submit:hover {background-color: #3e8e41}
+            #submit:hover {background-color: #CC00CC;}
             
             #submit:active {
-              background-color: #3e8e41;
+              background-color: #CC00FF;
               box-shadow: 0 5px #666;
               transform: translateY(4px);
             }</style>
-        <div id="submit"><input type="submit" id="submit" value="Submit" /></div>
+        <input type="submit" id="submit" value="Submit" />
         <br/>
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
@@ -48,7 +58,7 @@ function loadCommentForm () {
                     loadComments();    
                 } else {
                     alert('Please Login to comment');
-                     document.location.href = "/loginUser";
+                     //document.location.href = "/loginUser";
                 }
                 submit.value = 'Submit';
           }
@@ -97,11 +107,24 @@ function loadComments () {
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<div class="comment">
-                        <p>${escapeHTML(commentsData[i].comment)}</p>
-                        <div class="commenter">
-                            ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
-                        </div>
+                    content += `<style>
+                    .commenter{
+                        color: #fff;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                        font-family: Helvetica;
+                        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+                        }
+                        .commenter {
+                          text-align: left;
+                        }
+                    </style>
+                        <div class="comment">
+                         <div class="commenter">
+                         <br>
+                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} -:
+                         </div>
+                          <p style="font-size: 1.2em;font-color:#FFFFFF"> ${escapeHTML(commentsData[i].comment)} </p>
                     </div>`;
                 }
                 comments.innerHTML = content;
