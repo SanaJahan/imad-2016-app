@@ -33,22 +33,21 @@ function createTemplate(data){
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
                 <link href="/ui/style.css" rel="stylesheet" />
-                <link rel="stylesheet"
-                 href="https://fonts.googleapis.com/css?family=Baloo Tamma|David Libre|Open Sans Condensed|Ubuntu|Pavanam|Pacifico">
             </head>
             <body>
                 <div id="articles">
+                    <a href="/">Home</a>
                 </div>
-                <br><br>
-                <center><h1>${heading}</h1></center>
+                <hr />
+                <h1>${heading}</h1>
                 <div>
-                    <p align="right">${date.toDateString()}</p><br><br>
+                    ${date.toDateString()}
                 </div>
-                <div style="font-family: Pacifico;font-size: 1.5em">
+                <div>
                    ${content}
                 </div>
                 <br><hr>
-                <i><h4>Comments</h4></i>
+                   <h4>Comments</h4>
               <div id="comment_form">
               </div>
               <div id="comments">
@@ -84,9 +83,7 @@ function createFormTemplate(){
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
 .button:hover {background-color: #3e8e41}
-
 .button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
@@ -193,9 +190,7 @@ function createNewFormTemplate(){
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
 .button:hover {background-color: #3e8e41}
-
 .button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
@@ -287,7 +282,6 @@ var pool = new Pool(config);
        }
        });
        403 is the FORBIDDEN STATUS
-
 });*/
 //CREATING FUNCTION TO HASH THE PASSWORD
 function hash(input,salt){
@@ -335,7 +329,7 @@ app.post('/login',function(req,res){
         var salt = dbString.split('$')[2];
         var hashedPassword = hash(password,salt);
         if(hashedPassword===dbString){
-          req.session.auth = {userId: result.rows[0].id,username: result.rows[0].username};
+          req.session.auth = {userId: result.rows[0].id};
           res.send('Credentials correct !');
         }
         else{
@@ -353,8 +347,8 @@ app.get('/newUser',function(req,res){
     res.send(createNewFormTemplate());
        });
 app.get('/check-login',function(req,res){
-   if(req.session && req.session.auth && req.session.auth.userId && req.session.auth.username){
-       res.send(req.session.auth.username.toString());
+   if(req.session && req.session.auth && req.session.auth.userId){
+       res.send('You are logged in :'+req.session.auth.userId.toString());
    }
    else{
        res.send('You are not logged in');
@@ -363,7 +357,7 @@ app.get('/check-login',function(req,res){
 
 app.get('/logout',function(req,res){
     delete req.session.auth;
-    res.send('<html><body>Logged out successfully!<br/><br/><a href="/">Back to home</a></body></html>');
+    res.send('You are logged out successfully');
 });
 
 
@@ -410,7 +404,7 @@ app.get('/get-comments/:articleName',function(req,res){
 
 app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
-    if (req.session && req.session.auth && req.session.auth.userId && req.session.auth.username) {
+    if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
         pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
             if (err) {
