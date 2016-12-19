@@ -55,7 +55,8 @@ function loadCommentForm () {
                 if (request.status === 200) {
                     // clear the form & reload all the comments
                     document.getElementById('comment_text').value = '';
-                    loadComments();    
+                    loadComments();  
+                    
                 } else {
                     alert('Please Login to comment');
                      document.location.href = "/loginUser";
@@ -65,10 +66,10 @@ function loadCommentForm () {
         };
         
         // Make the request
-        var e_comment = document.getElementById('comment_text').value;
+        var comment = document.getElementById('comment_text').value;
         request.open('POST', '/submit-comment/' + currentArticleTitle, true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment: e_comment}));  
+        request.send(JSON.stringify({comment: comment}));  
         submit.value = 'Submitting...';
         
     };
@@ -81,6 +82,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
+                
             }
         }
     };
