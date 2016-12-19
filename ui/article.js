@@ -1,9 +1,9 @@
-// Eg: sanajahan.imad.hasura-app.io/articles/article-one will result in article-one
+// Eg: coco98.imad.hasura-app.io/articles/article-one will result in article-one
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-        <textarea id="comment_text" rows="6" cols="60" placeholder="Enter your comment here..."></textarea>
+        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
        <style>#submit{
               display: inline-block;
@@ -14,20 +14,20 @@ function loadCommentForm () {
               text-decoration: none;
               outline: none;
               color: #fff;
-              background-color: #CC00FF;
+              background-color: #4CAF50;
               border: none;
               border-radius: 15px;
               box-shadow: 0 9px #999;
             }
             
-            #submit:hover {background-color: #CC00CC;}
+            #submit:hover {background-color: #3e8e41}
             
             #submit:active {
-              background-color: #CC00FF;
+              background-color: #3e8e41;
               box-shadow: 0 5px #666;
               transform: translateY(4px);
             }</style>
-        <input type="submit" id="submit" value="Submit" />
+        <div id="submit"><input type="submit" id="submit" value="Submit" /></div>
         <br/>
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
@@ -45,21 +45,20 @@ function loadCommentForm () {
                 if (request.status === 200) {
                     // clear the form & reload all the comments
                     document.getElementById('comment_text').value = '';
-                    loadComments();  
-                    
+                    loadComments();    
                 } else {
                     alert('Please Login to comment');
-                     //document.location.href = "/loginUser";
+                     document.location.href = "/loginUser";
                 }
                 submit.value = 'Submit';
           }
         };
         
         // Make the request
-        var comment = document.getElementById('comment_text').value;
+        var e_comment = document.getElementById('comment_text').value;
         request.open('POST', '/submit-comment/' + currentArticleTitle, true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment:comment}));  
+        request.send(JSON.stringify({comment: e_comment}));  
         submit.value = 'Submitting...';
         
     };
@@ -72,7 +71,6 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
-                
             }
         }
     };
@@ -99,25 +97,11 @@ function loadComments () {
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<style>
-                    .commenter{
-                        color: #fff;
-                        font-size: 1.5em;
-                        font-weight: bold;
-                        font-family: Helvetica;
-                        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-                        }
-
-                        .commenter {
-                          text-align: left;
-                        }
-                    </style>
-                        <div class="comment">
-                         <div class="commenter">
-                         <br>
-                          ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} says-:
-                         </div>
-                          <p style="font-size: 1.2em"> " ${escapeHTML(commentsData[i].comment)} "</p>
+                    content += `<div class="comment">
+                        <p>${escapeHTML(commentsData[i].comment)}</p>
+                        <div class="commenter">
+                            ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
+                        </div>
                     </div>`;
                 }
                 comments.innerHTML = content;
