@@ -43,10 +43,10 @@ function createTemplate(data){
                 <hr />
                 <h1>${heading}</h1>
                 <div>
-                    <p align="left">${date.toDateString()}</p>
+                    <p align="right">${date.toDateString()}</p>
                 </div>
                 <div>
-                   <p style="font-family:Pacifico;font-size:1.5em">${content}</p>
+                  <p align ="left" style="font-family: Pacifico;font-size: 1.5em">${content}</p>
                 </div>
                 <br><hr>
                    <h4>Comments</h4>
