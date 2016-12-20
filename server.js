@@ -27,30 +27,31 @@ function createTemplate(data){
     var date = data.date;
     var content = data.content;
 
+     
         var htmlTemplate =  `<html>
             <head>
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
-               <link rel="stylesheet"
-                  href="https://fonts.googleapis.com/css?family=Baloo Tamma|David Libre|Open Sans Condensed|Ubuntu|Pavanam|Pacifico">
-
+                <link href="/ui/style.css" rel="stylesheet" />
+                <link rel="stylesheet"
+                 href="https://fonts.googleapis.com/css?family=Baloo Tamma|David Libre|Open Sans Condensed|Ubuntu|Pavanam|Pacifico">
             </head>
             <body>
                 <div id="articles">
-                    <a href="/">Home</a>
                 </div>
-                <hr />
-                <h1>${heading}</h1>
+                <br><br>
+                <center><h1>${heading}</h1></center>
                 <div>
-                    <p align="right">${date.toDateString()}</p>
+                    <p align="right">${date.toDateString()}</p><br><br>
                 </div>
-                <div>
-                  <p align ="left" style="font-family: Pacifico;font-size: 1.5em">${content}</p>
+                <div style="font-family: Pacifico;font-size: 1.5em">
+                   ${content}
                 </div>
                 <br><hr>
-                   <h4>Comments</h4>
+                <i><h4>Comments</h4></i>
               <div id="comment_form">
+               <p id="isLogged"></p>
               </div>
               <div id="comments">
                 <center>Loading comments...</center>
