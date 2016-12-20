@@ -32,7 +32,9 @@ function createTemplate(data){
                 <title>${title}</title>
                 <meta name = "viewport" content = "width = device-width initial-scale=1" />
                 <link rel="SHORTCUT ICON" type="image/ico" href="" /> 
-                <link href="/ui/style.css" rel="stylesheet" />
+               <link rel="stylesheet"
+                  href="https://fonts.googleapis.com/css?family=Baloo Tamma|David Libre|Open Sans Condensed|Ubuntu|Pavanam|Pacifico">
+
             </head>
             <body>
                 <div id="articles">
@@ -41,10 +43,10 @@ function createTemplate(data){
                 <hr />
                 <h1>${heading}</h1>
                 <div>
-                    ${date.toDateString()}
+                    <p align="left">${date.toDateString()}</p>
                 </div>
                 <div>
-                   ${content}
+                   <p style="font-style:Pacifico,font-size:1.5em">${content}</p>
                 </div>
                 <br><hr>
                    <h4>Comments</h4>
