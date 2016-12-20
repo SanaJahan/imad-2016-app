@@ -46,7 +46,7 @@ function createTemplate(data){
                     <p align="left">${date.toDateString()}</p>
                 </div>
                 <div>
-                   <p style="font-style:Pacifico,font-size:1.5em">${content}</p>
+                   <p style="font-family:Pacifico;font-size:1.5em">${content}</p>
                 </div>
                 <br><hr>
                    <h4>Comments</h4>
