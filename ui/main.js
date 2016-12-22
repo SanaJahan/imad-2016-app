@@ -161,9 +161,11 @@ function loadLogin () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                 loadLoggedInUser(this.responseText);
+                 //loadLoggedInUser(this.responseText);
+                 alert("You are logged in");
             } else {
-               document.location.href = "/loginUser";
+               //document.location.href = "/loginUser";
+               alert("You are not logged in");
             }
         }
     };
