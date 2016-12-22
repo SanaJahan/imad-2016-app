@@ -35,13 +35,13 @@ function loadCommentForm () {
     var submit = document.getElementById('submit_comment');
     submit.onclick = function () {
         // Create a request object
-        var request = new XMLHttpRequest();
+        var requestComment = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
+        requestComment.onreadystatechange = function () {
+          if (requestComment.readyState === XMLHttpRequest.DONE) {
                 // Take some action
-                if (request.status === 200) {
+                if (requestComment.status === 200) {
                     // clear the form & reload all the comments
                     document.getElementById('comment_text').value = '';
                     loadComments();    
@@ -55,9 +55,9 @@ function loadCommentForm () {
         
         // Make the request
         var comment = document.getElementById('comment_text').value;
-        request.open('POST', '/submit-comment/' + currentArticleTitle, true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment: comment}));  
+        requestComment.open('POST', '/submit-comment/' + currentArticleTitle, true);
+        requestComment.setRequestHeader('Content-Type', 'application/json');
+        requestComment.send(JSON.stringify({comment: comment}));  
         submit.value = 'Submitting...';
         
     };
