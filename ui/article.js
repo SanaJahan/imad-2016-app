@@ -5,7 +5,7 @@ function loadCommentForm () {
     var commentFormHtml = `
         <textarea id="comment_text" rows="5" cols="60" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
-       <style>#submit{
+       <style>#submit_comment{
               display: inline-block;
               padding: 10px 15px;
               font-size: 20px;
@@ -20,9 +20,9 @@ function loadCommentForm () {
               box-shadow: 0 9px #999;
             }
             
-            #submit:hover {background-color: #CC00CC;}
+            #submit_comment:hover {background-color: #CC00CC;}
             
-            #submit:active {
+            #submit_comment:active {
               background-color: #CC00FF;
               box-shadow: 0 5px #666;
               transform: translateY(4px);
