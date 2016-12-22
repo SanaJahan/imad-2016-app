@@ -105,7 +105,7 @@ submitlogin.onclick = function(){
      //request2.open('POST','/login', true);
      request2.setRequestHeader('Content-Type', 'application/json');
      request2.send(JSON.stringify({username: e_username, password: e_password}));  
-     submit.value='logging in..';
+     submitlogin.value='logging in..';
 };
 }
 //Register new user
