@@ -32,7 +32,6 @@ function loadCommentForm () {
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
     
-    // Submit username/password to login
     var submit = document.getElementById('submit_comment');
     submit.onclick = function () {
         // Create a request object
