@@ -45,8 +45,12 @@ function loadCommentForm () {
                     // clear the form & reload all the comments
                     document.getElementById('comment_text').value = '';
                     loadComments();    
-                } else {
+                } else  if (requestComment.status === 500) {
                     alert('Error in submitting comments');
+                     //document.location.href = "/loginUser";
+                }
+                 else{
+                    alert('Error in server');
                      //document.location.href = "/loginUser";
                 }
                 submit.value = 'Submit';
