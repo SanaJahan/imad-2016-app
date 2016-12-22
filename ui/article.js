@@ -46,7 +46,7 @@ function loadCommentForm () {
                     document.getElementById('comment_text').value = '';
                     loadComments();    
                 } else {
-                    alert('Please Login to comment');
+                    alert('Error in submitting comments');
                      //document.location.href = "/loginUser";
                 }
                 submit.value = 'Submit';
