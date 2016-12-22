@@ -3,16 +3,6 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-         <style>#comment_text {
-              padding: 10px;
-              border: solid 1px #dcdcdc;
-              transition: box-shadow 0.3s, border 0.3s;
-            }
-             #comment_text :focus,
-             {
-              border: solid 1px #707070;
-              box-shadow: 0 0 5px 1px #969696;
-            }</style>
         <textarea id="comment_text" rows="5" cols="60" placeholder="Enter your comment here..."></textarea>
         <br/><br/>
        <style>#submit{
