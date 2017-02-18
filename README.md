@@ -3,4 +3,4 @@ This is a basic web application built on NodeJs and express framework using Post
 1.Registerting new user
 2.Login and Logout
 3.Commenting on articles 
-Further planning to add features like search by tags,categories and more appealing UI. Any suggestions appreciated .
+
